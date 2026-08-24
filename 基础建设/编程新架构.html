@@ -1,0 +1,176 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>业务与 AI 协作架构图汇总 | 我的博客</title>
+    <meta name="generator" content="VuePress 1.9.10">
+    
+    <meta name="description" content="XXX">
+    
+    <link rel="preload" href="/wssf/assets/css/0.styles.1cbf7ed9.css" as="style"><link rel="preload" href="/wssf/assets/js/app.ba6ad665.js" as="script"><link rel="preload" href="/wssf/assets/js/7.bab34873.js" as="script"><link rel="preload" href="/wssf/assets/js/2.8029549d.js" as="script"><link rel="preload" href="/wssf/assets/js/1.d4da94b6.js" as="script"><link rel="preload" href="/wssf/assets/js/74.71dfce0c.js" as="script"><link rel="prefetch" href="/wssf/assets/js/10.0c267bbf.js"><link rel="prefetch" href="/wssf/assets/js/11.fdcab966.js"><link rel="prefetch" href="/wssf/assets/js/14.940f7b46.js"><link rel="prefetch" href="/wssf/assets/js/15.71ba1040.js"><link rel="prefetch" href="/wssf/assets/js/16.79677c60.js"><link rel="prefetch" href="/wssf/assets/js/17.f0569e89.js"><link rel="prefetch" href="/wssf/assets/js/18.06c6a2cc.js"><link rel="prefetch" href="/wssf/assets/js/19.9ca9849f.js"><link rel="prefetch" href="/wssf/assets/js/20.c03debdc.js"><link rel="prefetch" href="/wssf/assets/js/21.6adacf9a.js"><link rel="prefetch" href="/wssf/assets/js/22.f1801a07.js"><link rel="prefetch" href="/wssf/assets/js/23.aa2f780f.js"><link rel="prefetch" href="/wssf/assets/js/24.cbd2c6c6.js"><link rel="prefetch" href="/wssf/assets/js/25.ae091d95.js"><link rel="prefetch" href="/wssf/assets/js/26.f07269c5.js"><link rel="prefetch" href="/wssf/assets/js/27.670ac575.js"><link rel="prefetch" href="/wssf/assets/js/28.d7c4e191.js"><link rel="prefetch" href="/wssf/assets/js/29.7eda6eab.js"><link rel="prefetch" href="/wssf/assets/js/3.6e786859.js"><link rel="prefetch" href="/wssf/assets/js/30.61d95639.js"><link rel="prefetch" href="/wssf/assets/js/31.cc83b0ae.js"><link rel="prefetch" href="/wssf/assets/js/32.3f48d6e6.js"><link rel="prefetch" href="/wssf/assets/js/33.1273f0f9.js"><link rel="prefetch" href="/wssf/assets/js/34.75442499.js"><link rel="prefetch" href="/wssf/assets/js/35.16b42441.js"><link rel="prefetch" href="/wssf/assets/js/36.7afc4c5e.js"><link rel="prefetch" href="/wssf/assets/js/37.15ce0c83.js"><link rel="prefetch" href="/wssf/assets/js/38.fca6b358.js"><link rel="prefetch" href="/wssf/assets/js/39.b0859b80.js"><link rel="prefetch" href="/wssf/assets/js/4.ba75e628.js"><link rel="prefetch" href="/wssf/assets/js/40.2dc23fb2.js"><link rel="prefetch" href="/wssf/assets/js/41.e5bcfaef.js"><link rel="prefetch" href="/wssf/assets/js/42.93f482da.js"><link rel="prefetch" href="/wssf/assets/js/43.f823f8e4.js"><link rel="prefetch" href="/wssf/assets/js/44.c8829b2b.js"><link rel="prefetch" href="/wssf/assets/js/45.1783e046.js"><link rel="prefetch" href="/wssf/assets/js/46.521aee7c.js"><link rel="prefetch" href="/wssf/assets/js/47.d5e85fc5.js"><link rel="prefetch" href="/wssf/assets/js/48.8f64acee.js"><link rel="prefetch" href="/wssf/assets/js/49.bfccbeee.js"><link rel="prefetch" href="/wssf/assets/js/5.4f620dca.js"><link rel="prefetch" href="/wssf/assets/js/50.e939e0f4.js"><link rel="prefetch" href="/wssf/assets/js/51.30973e89.js"><link rel="prefetch" href="/wssf/assets/js/52.201a360c.js"><link rel="prefetch" href="/wssf/assets/js/53.3aebc21b.js"><link rel="prefetch" href="/wssf/assets/js/54.e3e32704.js"><link rel="prefetch" href="/wssf/assets/js/55.b7720b92.js"><link rel="prefetch" href="/wssf/assets/js/56.650ae85c.js"><link rel="prefetch" href="/wssf/assets/js/57.9cdff8c1.js"><link rel="prefetch" href="/wssf/assets/js/58.cb23f9be.js"><link rel="prefetch" href="/wssf/assets/js/59.5f64a108.js"><link rel="prefetch" href="/wssf/assets/js/6.421f55ef.js"><link rel="prefetch" href="/wssf/assets/js/60.ff1c1cb9.js"><link rel="prefetch" href="/wssf/assets/js/61.07eaf425.js"><link rel="prefetch" href="/wssf/assets/js/62.e64cfd0c.js"><link rel="prefetch" href="/wssf/assets/js/63.a19906bb.js"><link rel="prefetch" href="/wssf/assets/js/64.17c8010e.js"><link rel="prefetch" href="/wssf/assets/js/65.e8d3e21b.js"><link rel="prefetch" href="/wssf/assets/js/66.314d7271.js"><link rel="prefetch" href="/wssf/assets/js/67.052503b2.js"><link rel="prefetch" href="/wssf/assets/js/68.ebcfc6ed.js"><link rel="prefetch" href="/wssf/assets/js/69.d3fd7d70.js"><link rel="prefetch" href="/wssf/assets/js/70.6a022247.js"><link rel="prefetch" href="/wssf/assets/js/71.a2c5d6d9.js"><link rel="prefetch" href="/wssf/assets/js/72.d3d9eb33.js"><link rel="prefetch" href="/wssf/assets/js/73.4f319af5.js"><link rel="prefetch" href="/wssf/assets/js/75.e5cfaa18.js"><link rel="prefetch" href="/wssf/assets/js/76.8c8ad392.js"><link rel="prefetch" href="/wssf/assets/js/77.84921658.js"><link rel="prefetch" href="/wssf/assets/js/78.73bc7b61.js"><link rel="prefetch" href="/wssf/assets/js/79.f13c40a9.js"><link rel="prefetch" href="/wssf/assets/js/8.34df32fe.js"><link rel="prefetch" href="/wssf/assets/js/80.6dd55fc4.js"><link rel="prefetch" href="/wssf/assets/js/81.ec7ebb8a.js"><link rel="prefetch" href="/wssf/assets/js/82.0b3222b5.js"><link rel="prefetch" href="/wssf/assets/js/83.65f024e4.js"><link rel="prefetch" href="/wssf/assets/js/84.257b4e50.js"><link rel="prefetch" href="/wssf/assets/js/85.27645071.js"><link rel="prefetch" href="/wssf/assets/js/86.939f378d.js"><link rel="prefetch" href="/wssf/assets/js/87.6e164605.js"><link rel="prefetch" href="/wssf/assets/js/88.389317cd.js"><link rel="prefetch" href="/wssf/assets/js/89.6f1237a7.js"><link rel="prefetch" href="/wssf/assets/js/9.ba6f23ac.js"><link rel="prefetch" href="/wssf/assets/js/90.646a82ce.js"><link rel="prefetch" href="/wssf/assets/js/91.67ae7485.js"><link rel="prefetch" href="/wssf/assets/js/92.f39847b1.js"><link rel="prefetch" href="/wssf/assets/js/vendors~docsearch.097868fe.js">
+    <link rel="stylesheet" href="/wssf/assets/css/0.styles.1cbf7ed9.css">
+  </head>
+  <body>
+    <div id="app" data-server-rendered="true"><div class="theme-container" data-v-757b4ec5><div data-v-757b4ec5><div class="password-shadow password-wrapper-out" style="display:none;" data-v-a6c8d574 data-v-757b4ec5 data-v-757b4ec5><h3 class="title" data-v-a6c8d574>我的博客</h3> <p class="description" data-v-a6c8d574>XXX</p> <label id="box" class="inputBox" data-v-a6c8d574><input type="password" value="" data-v-a6c8d574> <span data-v-a6c8d574>Konck! Knock!</span> <button data-v-a6c8d574>OK</button></label> <div class="footer" data-v-a6c8d574><span data-v-a6c8d574><i class="iconfont reco-theme" data-v-a6c8d574></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-a6c8d574>vuePress-theme-reco</a></span> <span data-v-a6c8d574><i class="iconfont reco-copyright" data-v-a6c8d574></i> <a data-v-a6c8d574><!---->
+          
+        <!---->
+        2026
+      </a></span></div></div> <div class="hide" data-v-757b4ec5><header class="navbar" data-v-757b4ec5><div class="sidebar-button"><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" role="img" viewBox="0 0 448 512" class="icon"><path fill="currentColor" d="M436 124H12c-6.627 0-12-5.373-12-12V80c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12zm0 160H12c-6.627 0-12-5.373-12-12v-32c0-6.627 5.373-12 12-12h424c6.627 0 12 5.373 12 12v32c0 6.627-5.373 12-12 12z"></path></svg></div> <a href="/wssf/" class="home-link router-link-active"><!----> <span class="site-name">我的博客</span></a> <div class="links"><div class="color-picker"><a class="color-button"><i class="iconfont reco-color"></i></a> <div class="color-picker-menu" style="display:none;"><div class="mode-options"><h4 class="title">Choose mode</h4> <ul class="color-mode-options"><li class="dark">dark</li><li class="auto active">auto</li><li class="light">light</li></ul></div></div></div> <div class="search-box"><i class="iconfont reco-search"></i> <input aria-label="Search" autocomplete="off" spellcheck="false" value=""> <!----></div> <nav class="nav-links can-hide"><div class="nav-item"><a href="/wssf/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      jimmy 的博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/726107228492253" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/coding-lin" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav></div></header> <div class="sidebar-mask" data-v-757b4ec5></div> <aside class="sidebar" data-v-757b4ec5><div class="personal-info-wrapper" data-v-d1382112 data-v-757b4ec5><!----> <!----> <div class="num" data-v-d1382112><div data-v-d1382112><h3 data-v-d1382112>54</h3> <h6 data-v-d1382112>文章</h6></div> <div data-v-d1382112><h3 data-v-d1382112>0</h3> <h6 data-v-d1382112>标签</h6></div></div> <ul class="social-links" data-v-d1382112></ul> <hr data-v-d1382112></div> <nav class="nav-links"><div class="nav-item"><a href="/wssf/" class="nav-link"><i class="undefined"></i>
+  首页
+</a></div><div class="nav-item"><div class="dropdown-wrapper"><a class="dropdown-title"><span class="title"><i class="undefined"></i>
+      jimmy 的博客
+    </span> <span class="arrow right"></span></a> <ul class="nav-dropdown" style="display:none;"><li class="dropdown-item"><!----> <a href="https://juejin.cn/user/726107228492253" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  掘金
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li><li class="dropdown-item"><!----> <a href="https://github.com/coding-lin" target="_blank" rel="noopener noreferrer" class="nav-link external"><i class="undefined"></i>
+  Github
+  <span><svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false" x="0px" y="0px" viewBox="0 0 100 100" width="15" height="15" class="icon outbound"><path fill="currentColor" d="M18.8,85.1h56l0,0c2.2,0,4-1.8,4-4v-32h-8v28h-48v-48h28v-8h-32l0,0c-2.2,0-4,1.8-4,4v56C14.8,83.3,16.6,85.1,18.8,85.1z"></path> <polygon fill="currentColor" points="45.7,48.7 51.3,54.3 77.2,28.5 77.2,37.2 85.2,37.2 85.2,14.9 62.8,14.9 62.8,22.9 71.5,22.9"></polygon></svg> <span class="sr-only">(opens new window)</span></span></a></li></ul></div></div> <!----></nav> <ul class="sidebar-links"><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/" class="sidebar-heading clickable router-link-active"><span>欢迎学习</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/ai/taskmaster" class="sidebar-heading clickable"><span>ai</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/关于副业/idea" class="sidebar-heading clickable"><span>关于副业</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/基础建设/1" class="sidebar-heading clickable open"><span>基础建设</span> <span class="arrow down"></span></a> <ul class="sidebar-links sidebar-group-items"><li><a href="/wssf/基础建设/1.html" class="sidebar-link">verdaccio搭建私有仓库</a></li><li><a href="/wssf/基础建设/2.html" class="sidebar-link">vue + vscode 断点调试</a></li><li><a href="/wssf/基础建设/3.html" class="sidebar-link">gitflow</a></li><li><a href="/wssf/基础建设/数据库与金融数据工具.html" class="sidebar-link">数据库与金融数据工具</a></li><li><a href="/wssf/基础建设/passkey.html" class="sidebar-link">passkey登录</a></li><li><a href="/wssf/基础建设/passkey_complete.html" class="sidebar-link">passkey完整指南</a></li><li><a href="/wssf/基础建设/backend.html" class="sidebar-link">后端架构设计</a></li><li><a href="/wssf/基础建设/project_design.html" class="sidebar-link">如何一个人独自负责完整的后端项目</a></li><li><a href="/wssf/基础建设/编程新架构.html" class="active sidebar-link">业务与 AI 协作架构图汇总</a></li><li><a href="/wssf/基础建设/aip.html" class="sidebar-link">Infini Ontology：AIP 闭环要点总结</a></li></ul></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/linux/1" class="sidebar-heading clickable"><span>linux</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/docker/1" class="sidebar-heading clickable"><span>docker</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/nginx/1" class="sidebar-heading clickable"><span>nginx</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/有用的工具/1" class="sidebar-heading clickable"><span>有用的工具</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/代码/crypt" class="sidebar-heading clickable"><span>代码</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/项目总结/list" class="sidebar-heading clickable"><span>项目总结</span> <span class="arrow right"></span></a> <!----></section></li><li><section class="sidebar-group collapsable depth-0"><a href="/wssf/问题解决/1" class="sidebar-heading clickable"><span>问题解决</span> <span class="arrow right"></span></a> <!----></section></li></ul> </aside> <div class="password-shadow password-wrapper-in" style="display:none;" data-v-a6c8d574 data-v-757b4ec5><h3 class="title" data-v-a6c8d574>业务与 AI 协作架构图汇总</h3> <!----> <label id="box" class="inputBox" data-v-a6c8d574><input type="password" value="" data-v-a6c8d574> <span data-v-a6c8d574>Konck! Knock!</span> <button data-v-a6c8d574>OK</button></label> <div class="footer" data-v-a6c8d574><span data-v-a6c8d574><i class="iconfont reco-theme" data-v-a6c8d574></i> <a target="blank" href="https://vuepress-theme-reco.recoluan.com" data-v-a6c8d574>vuePress-theme-reco</a></span> <span data-v-a6c8d574><i class="iconfont reco-copyright" data-v-a6c8d574></i> <a data-v-a6c8d574><!---->
+          
+        <!---->
+        2026
+      </a></span></div></div> <div data-v-757b4ec5><div data-v-757b4ec5><main class="page"><section style="display:;"><div class="page-title"><h1 class="title">业务与 AI 协作架构图汇总</h1> <div data-v-6008cd2c><i class="iconfont reco-account" data-v-6008cd2c><span data-v-6008cd2c>jimmy</span></i> <i class="iconfont reco-date" data-v-6008cd2c><span data-v-6008cd2c>2026/8/17</span></i> <!----> <!----></div></div> <div class="theme-reco-content content__default"><p><strong>前提：</strong><br>
+ai已经具备在提供完整 清晰的prompt 的前提下，完成复杂架构项目的开发执行，并且错误很少</p> <p><strong>核心结论：</strong><br>
+先立业务架子，用 AI 铺开设计/业务/技术；<strong>人的位置在提升</strong>（取舍与创造性），<strong>价值低的工作交给 AI</strong>；技术是底座，不是唯一身份。</p> <hr> <h2 id="一、总览"><a href="#一、总览" class="header-anchor">#</a> 一、总览</h2> <table><thead><tr><th>图</th> <th>主题</th> <th>一句话</th></tr></thead> <tbody><tr><td>图 1</td> <td>传统业务系统架构</td> <td>Client / 前端 → 业务 → Data → 中间件与存储</td></tr> <tr><td>图 2</td> <td>先定业务架子</td> <td>先理解业务与工期，再做技术选型</td></tr> <tr><td>图 3</td> <td>AI 辅助落地</td> <td>Prompt ↔ 模型 + 文档 / 知识库 / Skills</td></tr> <tr><td>图 4</td> <td>角色演进</td> <td>人向产品 / PM / 前后端 + Agent 扩展</td></tr> <tr><td>图 5</td> <td>AI 与人的分工</td> <td>AI 参与各环节；人往上提；低价值工作交给 AI</td></tr></tbody></table> <hr> <h2 id="二、图-1-传统业务系统架构"><a href="#二、图-1-传统业务系统架构" class="header-anchor">#</a> 二、图 1：传统业务系统架构</h2> <div class="language-text extra-class"><pre class="language-text"><code>                    ┌─────────┐
+                    │  前端    │
+                    └────┬────┘
+                         │
+   client ───────────► 【业务】
+                         │
+                         ▼
+   三方 ─────────────► 【Data】
+                         │
+              ┌──────────┼──────────┐
+              ▼          ▼          ▼
+           接近/接入    处理       engine
+              │          │          │
+              └──────────┴────┬─────┘
+                              ▼
+                    ┌─────────────────┐
+                    │  存储与中间件     │
+                    │  · Kafka（多个）  │
+                    │  · Redis 热点    │
+                    │  · MySQL / CK    │
+                    │  · ES（工作+双写）│
+                    └─────────────────┘
+
+左侧可补充能力：
+  · 小功能    · 任务     · 可配置
+  · 任务细化  · Pool
+</code></pre></div><p>请求从 Client / 前端进入业务层，业务读写 Data；经接入、处理、engine 后，落到 Kafka / Redis / MySQL·ClickHouse / ES 等。</p> <hr> <h2 id="三、图-2-做项目时先定「业务架子」"><a href="#三、图-2-做项目时先定「业务架子」" class="header-anchor">#</a> 三、图 2：做项目时先定「业务架子」</h2> <div class="language-text extra-class"><pre class="language-text"><code>  AI 100%  ──►  理解业务
+  工期     ──►  时间约束 ──► 排期
+
+  技术选型（✓）
+  ┌─────────────────────────────────────────┐
+  │  gdk · MySQL · CK · Redis               │
+  │  Data · QPS                              │
+  │  client / Data / 分阶段推进  ✓           │
+  └─────────────────────────────────────────┘
+                    │
+                    ▼
+              【架子】业务
+</code></pre></div><p>先尽量把业务和工期搞清楚，再按 Data、QPS 等约束做中间件选型，先立<strong>业务架子</strong>，而不是先堆技术名词。</p> <h3 id="业务架子是什么"><a href="#业务架子是什么" class="header-anchor">#</a> 业务架子是什么？</h3> <p><strong>业务架子</strong> = 在写具体代码、堆中间件细节之前，先立起来的那套「业务骨架」。<br>
+它回答的是：<strong>系统要办什么事、边界在哪、按什么节奏推进</strong>——技术选型要挂在这副骨架上，而不是反过来用技术名词硬套业务。</p> <p>可以拆成三块：</p> <table><thead><tr><th>块</th> <th>要定清楚的内容</th> <th>例子</th></tr></thead> <tbody><tr><td><strong>业务理解</strong></td> <td>核心对象、关键路径、约束与边界</td> <td>谁在用？主流程是什么？哪些不做？</td></tr> <tr><td><strong>工期与排期</strong></td> <td>时间约束下能做到哪一步、如何分阶段</td> <td>1 个月出什么；MVP vs 后续</td></tr> <tr><td><strong>选型服从业务</strong></td> <td>按 Data、QPS、读写形态选底座</td> <td>要不要 CK、Redis、Kafka，因业务负载而定</td></tr></tbody></table> <p>和「技术底座」的分工：</p> <div class="language-text extra-class"><pre class="language-text"><code>技术底座：gdk · MySQL · CK · Redis · Kafka · ES …
+              │  （能跑、能存、能扛量）
+              ▼
+业务架子：对象 / 流程 / 边界 / 分阶段目标
+              │  （做什么、做到哪）
+              ▼
+再用 AI 铺开：设计 · 细节 · 实现
+</code></pre></div><ul><li><strong>不是</strong>：一上来列一堆中间件名词，再找业务去填</li> <li><strong>而是</strong>：先立架子（业务 + 工期），再选底座，再用 AI / Prompt 往里填设计和代码</li></ul> <p>架子立稳之后，才进入下一节的 Prompt 闭环。</p> <hr> <h2 id="四、图-3-ai-辅助落地-prompt-闭环"><a href="#四、图-3-ai-辅助落地-prompt-闭环" class="header-anchor">#</a> 四、图 3：AI 辅助落地（Prompt 闭环）</h2> <div class="language-text extra-class"><pre class="language-text"><code>  技术底座（已选型）
+  gdk · MySQL · CK · Redis · Data · QPS
+                    │
+                    ▼
+              【架子】业务
+                    │
+                    ▼
+              ┌─ prompt ─┐
+              │    ↓     │
+              │   AI     │──► 理解流程（步骤 7、8…）
+              │    ↓     │
+              │  prompt  │◄─────────────┐
+              └──────────┘              │
+                    │                   │
+        ┌───────────┼───────────┐       │
+        ▼           ▼           ▼       │
+     工作.md     知识库       Skills     │
+        │           │           │       │
+        └───────────┴───────────┴───────┘
+</code></pre></div><p>业务架子定好后，用 <strong>prompt ↔ AI</strong> 循环理解流程；配合工作文档、知识库、Skills 产出实现，再落地到具体算法或代码。</p> <hr> <h2 id="五、图-4-分工演进"><a href="#五、图-4-分工演进" class="header-anchor">#</a> 五、图 4：分工演进</h2> <div class="language-text extra-class"><pre class="language-text"><code>
+② 当前路径
+────────────────────────────────────────
+  产品 ──► 想 ──► PM / QA
+
+  一线 ──► PM + 前后端
+
+
+② 未来路径
+────────────────────────────────────────
+
+  AI-Agent ──► AI ──► 具体落地
+       ↑
+     （能力/经验积累）
+
+右侧仍需碰的能力：
+  · 前后端
+  · Data
+  · 计算相关
+────────────────────────────────────────
+</code></pre></div><p>协作上用 AI 优化并提取问题；职业上从纯实现扩展到 <strong>产品理解 + PM/前后端 + Agent</strong>，同时仍要具备前后端与 Data 的基础。</p> <hr> <h2 id="六、图-5-ai-参与各个环节-人的位置在提升-价值低的工作交给-ai"><a href="#六、图-5-ai-参与各个环节-人的位置在提升-价值低的工作交给-ai" class="header-anchor">#</a> 六、图 5：AI 参与各个环节，人的位置在提升，价值低的工作交给 AI</h2> <div class="language-text extra-class"><pre class="language-text"><code>         AI
+          │
+          ▼
+  ┌─────────────────────┐
+  │  设计 · 业务 · 技术   │
+  │       取 舍          │
+  └──────────┬──────────┘
+             │
+             ▼
+        创 造 性  ←── 人
+
+
+  闭环：  AI ──► 人 ──► AI
+  前提：  人要有能力（判断 / 整合）
+
+
+  结构示意：
+       ┌────┐
+       │    │
+       ├────┤
+       │ 人 │ ──► ┌───┐
+       ├────┤     │ × │  ← 可替代环节拿掉
+       │    │     └───┘
+       └────┘
+</code></pre></div><h2 id="七、一张图串起来-端到端"><a href="#七、一张图串起来-端到端" class="header-anchor">#</a> 七、一张图串起来（端到端）</h2> <div class="language-text extra-class"><pre class="language-text"><code>┌──────────────────────────────────────────────────────────┐
+│ 1. 理解业务 + 工期                                        │
+│ 2. 技术选型：MySQL / CK / Redis / Kafka / ES · Data·QPS   │
+│ 3. 立【业务架子】                                         │
+└────────────────────────────┬─────────────────────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│ 4. Prompt ↔ AI + 工作文档 / 知识库 / Skills               │
+│                           
+└────────────────────────────┬─────────────────────────────┘
+                             ▼
+┌──────────────────────────────────────────────────────────┐
+│ 5. AI 参与各个环节（设计 · 业务 · 技术）                    │
+│ 6. 人的位置提升：【取舍】──►【创造性】                      │
+│ 7. 闭环：AI → 人 → AI；价值低的工作交给 AI / 拿掉           │
+└──────────────────────────────────────────────────────────┘
+                             ▼
+              角色：产品 / PM / 前后端 + Agent
+              （技术是底座，不是唯一身份）
+</code></pre></div></div></section> <footer class="page-edit"><!----> <!----></footer> <div class="page-nav"><p class="inner"><span class="prev"><a href="/wssf/基础建设/project_design.html" class="prev">
+          如何一个人独自负责完整的后端项目
+        </a></span> <span class="next"><a href="/wssf/基础建设/aip.html">
+          Infini Ontology：AIP 闭环要点总结
+        </a></span></p></div> <div class="comments-wrapper"><!----></div></main></div> <!----></div> <ul class="sub-sidebar sub-sidebar-wrapper" style="width:12rem;" data-v-7c337468 data-v-757b4ec5><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#一、总览" class="sidebar-link reco-side-一、总览" data-v-7c337468>一、总览</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#二、图-1-传统业务系统架构" class="sidebar-link reco-side-二、图-1-传统业务系统架构" data-v-7c337468>二、图 1：传统业务系统架构</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#三、图-2-做项目时先定「业务架子」" class="sidebar-link reco-side-三、图-2-做项目时先定「业务架子」" data-v-7c337468>三、图 2：做项目时先定「业务架子」</a></li><li class="level-3" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#业务架子是什么" class="sidebar-link reco-side-业务架子是什么" data-v-7c337468>业务架子是什么？</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#四、图-3-ai-辅助落地-prompt-闭环" class="sidebar-link reco-side-四、图-3-ai-辅助落地-prompt-闭环" data-v-7c337468>四、图 3：AI 辅助落地（Prompt 闭环）</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#五、图-4-分工演进" class="sidebar-link reco-side-五、图-4-分工演进" data-v-7c337468>五、图 4：分工演进</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#六、图-5-ai-参与各个环节-人的位置在提升-价值低的工作交给-ai" class="sidebar-link reco-side-六、图-5-ai-参与各个环节-人的位置在提升-价值低的工作交给-ai" data-v-7c337468>六、图 5：AI 参与各个环节，人的位置在提升，价值低的工作交给 AI</a></li><li class="level-2" data-v-7c337468><a href="/wssf/%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/%E7%BC%96%E7%A8%8B%E6%96%B0%E6%9E%B6%E6%9E%84.html#七、一张图串起来-端到端" class="sidebar-link reco-side-七、一张图串起来-端到端" data-v-7c337468>七、一张图串起来（端到端）</a></li></ul></div></div></div><div class="global-ui"><div class="back-to-ceiling" style="right:1rem;bottom:6rem;width:2.5rem;height:2.5rem;border-radius:.25rem;line-height:2.5rem;display:none;" data-v-2a01419c data-v-2a01419c><svg t="1574745035067" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="5404" class="icon" data-v-2a01419c><path d="M526.60727968 10.90185116a27.675 27.675 0 0 0-29.21455937 0c-131.36607665 82.28402758-218.69155461 228.01873535-218.69155402 394.07834331a462.20625001 462.20625001 0 0 0 5.36959153 69.94390903c1.00431239 6.55289093-0.34802892 13.13561351-3.76865779 18.80351572-32.63518765 54.11355614-51.75690182 118.55860487-51.7569018 187.94566865a371.06718723 371.06718723 0 0 0 11.50484808 91.98906777c6.53300375 25.50556257 41.68394495 28.14064038 52.69160883 4.22606766 17.37162448-37.73630017 42.14135425-72.50938081 72.80769204-103.21549295 2.18761121 3.04276886 4.15646224 6.24463696 6.40373557 9.22774369a1871.4375 1871.4375 0 0 0 140.04691725 5.34970492 1866.36093723 1866.36093723 0 0 0 140.04691723-5.34970492c2.24727335-2.98310674 4.21612437-6.18497483 6.3937923-9.2178004 30.66633723 30.70611158 55.4360664 65.4791928 72.80769147 103.21549355 11.00766384 23.91457269 46.15860503 21.27949489 52.69160879-4.22606768a371.15156223 371.15156223 0 0 0 11.514792-91.99901164c0-69.36717486-19.13165746-133.82216804-51.75690182-187.92578088-3.42062944-5.66790279-4.76302748-12.26056868-3.76865837-18.80351632a462.20625001 462.20625001 0 0 0 5.36959269-69.943909c-0.00994388-166.08943902-87.32547796-311.81420293-218.6915546-394.09823051zM605.93803103 357.87693858a93.93749974 93.93749974 0 1 1-187.89594924 6.1e-7 93.93749974 93.93749974 0 0 1 187.89594924-6.1e-7z" p-id="5405" data-v-2a01419c></path><path d="M429.50777625 765.63860547C429.50777625 803.39355007 466.44236686 1000.39046097 512.00932183 1000.39046097c45.56695499 0 82.4922232-197.00623328 82.5015456-234.7518555 0-37.75494459-36.9345906-68.35043303-82.4922232-68.34111062-45.57627738-0.00932239-82.52019037 30.59548842-82.51086798 68.34111062z" p-id="5406" data-v-2a01419c></path></svg></div></div></div>
+    <script src="/wssf/assets/js/app.ba6ad665.js" defer></script><script src="/wssf/assets/js/7.bab34873.js" defer></script><script src="/wssf/assets/js/2.8029549d.js" defer></script><script src="/wssf/assets/js/1.d4da94b6.js" defer></script><script src="/wssf/assets/js/74.71dfce0c.js" defer></script>
+  </body>
+</html>
