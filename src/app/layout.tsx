@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import { CornerNika } from '@/components/CornerNika'
+import { MarketStrip } from '@/components/MarketStrip'
 import { ParticleField } from '@/components/ParticleField'
 import { SiteFooter, SiteHeader } from '@/components/SiteChrome'
 import { site } from '@/lib/site'
@@ -32,6 +33,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="grain" aria-hidden />
         <div className="relative z-10">
           <SiteHeader />
+          <MarketStrip />
           <main>{children}</main>
           <SiteFooter />
         </div>

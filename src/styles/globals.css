@@ -338,3 +338,28 @@
     transition: none;
   }
 }
+
+.market-strip {
+  min-height: 42px;
+  max-height: 46px;
+  overflow: hidden;
+  width: 100%;
+  background: var(--paper-deep);
+}
+
+.dark .market-strip {
+  background: #05080f;
+  border-color: color-mix(in oklab, white 10%, transparent);
+}
+
+.market-strip .tradingview-widget-container,
+.market-strip .tradingview-widget-container__widget,
+.market-strip iframe {
+  height: 42px !important;
+  width: 100% !important;
+}
+
+.dark .market-strip .tradingview-widget-container,
+.dark .market-strip .tradingview-widget-container__widget {
+  background: #05080f !important;
+}
