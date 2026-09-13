@@ -1,0 +1,197 @@
+@import 'tailwindcss';
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --font-sans: 'Manrope', ui-sans-serif, system-ui, sans-serif;
+  --font-display: 'Syne', ui-sans-serif, system-ui, sans-serif;
+  --font-mono: 'JetBrains Mono', ui-monospace, SFMono-Regular, Menlo, monospace;
+
+  --color-ink: var(--ink);
+  --color-ink-soft: var(--ink-soft);
+  --color-paper: var(--paper);
+  --color-paper-deep: var(--paper-deep);
+  --color-teal: var(--teal);
+  --color-teal-bright: var(--teal-bright);
+  --color-accent: var(--accent);
+  --color-line: color-mix(in oklab, var(--ink) 12%, transparent);
+}
+
+:root {
+  color-scheme: light;
+  --ink: #0b1220;
+  --ink-soft: #4b5b70;
+  --paper: #eef3f7;
+  --paper-deep: #dde7ef;
+  --teal: #0e7490;
+  --teal-bright: #22d3ee;
+  --accent: #2563eb;
+  --bg-top: #f5f8fb;
+  --bg-bottom: #e8eef4;
+  --selection: color-mix(in oklab, var(--teal) 28%, white);
+}
+
+.dark {
+  color-scheme: dark;
+  --ink: #e8eef4;
+  --ink-soft: #9aadc0;
+  --paper: #0b1220;
+  --paper-deep: #151d2c;
+  --teal: #22d3ee;
+  --teal-bright: #67e8f9;
+  --accent: #60a5fa;
+  --bg-top: #0a101c;
+  --bg-bottom: #0e1624;
+  --selection: color-mix(in oklab, var(--teal) 35%, transparent);
+  --color-line: color-mix(in oklab, var(--ink) 14%, transparent);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-paper text-ink antialiased font-sans;
+    background-image:
+      radial-gradient(ellipse 80% 50% at 8% -10%, color-mix(in oklab, var(--teal-bright) 22%, transparent), transparent 55%),
+      radial-gradient(ellipse 55% 40% at 100% 0%, color-mix(in oklab, var(--accent) 14%, transparent), transparent 50%),
+      linear-gradient(180deg, var(--bg-top) 0%, var(--paper) 45%, var(--bg-bottom) 100%);
+    background-attachment: fixed;
+  }
+
+  ::selection {
+    background: var(--selection);
+  }
+
+  a {
+    @apply transition-colors;
+  }
+}
+
+@layer components {
+  .prose-note {
+    @apply text-[1.05rem] leading-8 text-ink;
+  }
+
+  .prose-note :where(h1, h2, h3, h4) {
+    @apply font-display font-normal tracking-tight text-ink mt-10 mb-4;
+  }
+
+  .prose-note h1 {
+    @apply text-4xl;
+  }
+
+  .prose-note h2 {
+    @apply text-3xl border-b border-line pb-2;
+  }
+
+  .prose-note h3 {
+    @apply text-2xl;
+  }
+
+  .prose-note p {
+    @apply my-4 text-ink-soft;
+  }
+
+  .prose-note a {
+    @apply text-teal underline decoration-teal/30 underline-offset-4 hover:decoration-teal;
+  }
+
+  .prose-note ul,
+  .prose-note ol {
+    @apply my-4 pl-6 text-ink-soft;
+  }
+
+  .prose-note ul {
+    list-style: disc;
+  }
+
+  .prose-note ol {
+    list-style: decimal;
+  }
+
+  .prose-note li {
+    @apply my-1.5;
+  }
+
+  .prose-note blockquote {
+    @apply my-6 border-l-4 border-teal/50 pl-4 italic text-ink-soft;
+  }
+
+  .prose-note hr {
+    @apply my-10 border-line;
+  }
+
+  .prose-note table {
+    @apply my-6 w-full border-collapse text-sm;
+  }
+
+  .prose-note th,
+  .prose-note td {
+    @apply border border-line px-3 py-2 text-left;
+  }
+
+  .prose-note th {
+    @apply bg-paper-deep/70 font-semibold text-ink;
+  }
+
+  .prose-note pre {
+    @apply my-6 overflow-x-auto rounded-none border border-line px-4 py-4 text-[0.9rem] leading-7;
+    background: #0b1220;
+    color: #eef3f7;
+  }
+
+  .dark .prose-note pre {
+    background: #060a12;
+    border-color: color-mix(in oklab, var(--ink) 18%, transparent);
+  }
+
+  .prose-note code {
+    @apply font-mono text-[0.92em];
+  }
+
+  .prose-note :not(pre) > code {
+    @apply rounded-sm bg-paper-deep px-1.5 py-0.5 text-teal;
+  }
+
+  .prose-note img {
+    @apply my-6 max-w-full border border-line;
+  }
+
+  .grain {
+    pointer-events: none;
+    position: fixed;
+    inset: 0;
+    z-index: 50;
+    opacity: 0.035;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  .dark .grain {
+    opacity: 0.06;
+  }
+
+  .reveal {
+    animation: rise 700ms cubic-bezier(0.22, 1, 0.36, 1) both;
+  }
+
+  .reveal-delay {
+    animation-delay: 120ms;
+  }
+
+  .reveal-delay-2 {
+    animation-delay: 220ms;
+  }
+}
+
+@keyframes rise {
+  from {
+    opacity: 0;
+    transform: translateY(18px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
