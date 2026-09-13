@@ -31,15 +31,14 @@ export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const el = canvasRef.current
-    if (!el) return
+    const canvasEl = canvasRef.current
+    const ctxEl = canvasEl?.getContext('2d', { alpha: true })
+    if (!canvasEl || !ctxEl) return
+    if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) return
 
-    const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
-    if (reduceMotion) return
-
-    const maybeCtx = el.getContext('2d', { alpha: true })
-    if (!maybeCtx) return
-    const ctx: CanvasRenderingContext2D = maybeCtx
+    // 显式定型，避免闭包里被推断回 null
+    const canvas: HTMLCanvasElement = canvasEl
+    const ctx: CanvasRenderingContext2D = ctxEl
 
     const mouse = { x: -9999, y: -9999, active: false }
     let particles: Particle[] = []
@@ -76,10 +75,10 @@ export function ParticleField() {
       dpr = Math.min(window.devicePixelRatio || 1, 2)
       width = window.innerWidth
       height = window.innerHeight
-      el.width = Math.floor(width * dpr)
-      el.height = Math.floor(height * dpr)
-      el.style.width = `${width}px`
-      el.style.height = `${height}px`
+      canvas.width = Math.floor(width * dpr)
+      canvas.height = Math.floor(height * dpr)
+      canvas.style.width = `${width}px`
+      canvas.style.height = `${height}px`
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       spawn(width, height)
     }
@@ -136,7 +135,6 @@ export function ParticleField() {
         if (p.y > height + 20) p.y = -20
       }
 
-      // soft links near cursor / neighbors
       for (let i = 0; i < particles.length; i++) {
         const a = particles[i]
         for (let j = i + 1; j < particles.length; j++) {
