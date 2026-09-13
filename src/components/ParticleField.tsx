@@ -31,16 +31,16 @@ export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const node = canvasRef.current
-    if (!node) return
+    const el = canvasRef.current
+    if (!el) return
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) return
 
-    const ctx = node.getContext('2d', { alpha: true })
-    if (!ctx) return
+    const maybeCtx = el.getContext('2d', { alpha: true })
+    if (!maybeCtx) return
+    const ctx: CanvasRenderingContext2D = maybeCtx
 
-    const canvas = node
     const mouse = { x: -9999, y: -9999, active: false }
     let particles: Particle[] = []
     let raf = 0
@@ -67,7 +67,7 @@ export function ParticleField() {
           vy: (Math.random() - 0.5) * 0.35,
           r,
           base: 0.25 + Math.random() * 0.55,
-          tint: Math.random() > 0.72 ? 1 : 0,
+          tint: (Math.random() > 0.72 ? 1 : 0) as 0 | 1,
         }
       })
     }
@@ -76,10 +76,10 @@ export function ParticleField() {
       dpr = Math.min(window.devicePixelRatio || 1, 2)
       width = window.innerWidth
       height = window.innerHeight
-      canvas.width = Math.floor(width * dpr)
-      canvas.height = Math.floor(height * dpr)
-      canvas.style.width = `${width}px`
-      canvas.style.height = `${height}px`
+      el.width = Math.floor(width * dpr)
+      el.height = Math.floor(height * dpr)
+      el.style.width = `${width}px`
+      el.style.height = `${height}px`
       ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
       spawn(width, height)
     }
