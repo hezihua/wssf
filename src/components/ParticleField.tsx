@@ -31,15 +31,16 @@ export function ParticleField() {
   const canvasRef = useRef<HTMLCanvasElement>(null)
 
   useEffect(() => {
-    const canvas = canvasRef.current
-    if (!canvas) return
+    const node = canvasRef.current
+    if (!node) return
 
     const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches
     if (reduceMotion) return
 
-    const ctx = canvas.getContext('2d', { alpha: true })
+    const ctx = node.getContext('2d', { alpha: true })
     if (!ctx) return
 
+    const canvas = node
     const mouse = { x: -9999, y: -9999, active: false }
     let particles: Particle[] = []
     let raf = 0
