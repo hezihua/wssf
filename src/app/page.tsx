@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { getAllPosts, getCategoryNav, getIndexIntro } from '@/lib/posts'
 import { resolveCategoryTitle, site } from '@/lib/site'
+import { works } from '@/lib/works'
 
 export default function HomePage() {
   const intro = getIndexIntro()
@@ -50,31 +51,51 @@ export default function HomePage() {
       </section>
 
       <section className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
-        <div className="mb-8 flex items-end justify-between gap-4">
-          <div>
-            <h2 className="font-display text-4xl tracking-tight text-ink">栏目</h2>
-          </div>
+        <div className="mb-8">
+          <h2 className="font-display text-4xl tracking-tight text-ink">线上作品</h2>
         </div>
         <div className="grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
-          {categories.map((cat) => (
-            <Link
-              key={cat.slug}
-              href={`/notes/${cat.posts[0].slug}/`}
-              className="group border-t border-line pt-4"
-            >
-              <div className="flex items-baseline justify-between gap-3">
-                <h3 className="text-lg font-semibold text-ink group-hover:text-teal">
-                  {cat.title}
-                </h3>
-                <span className="text-xs tabular-nums text-ink-soft">{cat.posts.length}</span>
+          {works.map((work) => (
+            <div key={work.demo} className="border-t border-line pt-4">
+              <h3 className="text-lg font-semibold text-ink">{work.name}</h3>
+              <p className="mt-2 text-sm leading-6 text-ink-soft">{work.blurb}</p>
+              <div className="mt-3 flex gap-4 text-sm">
+                <a href={work.demo} target="_blank" rel="noreferrer" className="text-teal hover:underline">
+                  地址
+                </a>
+                <a href={work.repo} target="_blank" rel="noreferrer" className="text-ink-soft hover:text-teal">
+                  GitHub
+                </a>
               </div>
-              <p className="mt-2 text-sm leading-6 text-ink-soft">{cat.blurb}</p>
-            </Link>
+            </div>
           ))}
         </div>
       </section>
 
       <section className="border-t border-line bg-paper-deep/35">
+        <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
+          <h2 className="font-display text-4xl tracking-tight text-ink">栏目</h2>
+          <div className="mt-8 grid gap-x-10 gap-y-8 sm:grid-cols-2 lg:grid-cols-3">
+            {categories.map((cat) => (
+              <Link
+                key={cat.slug}
+                href={`/notes/${cat.posts[0].slug}/`}
+                className="group border-t border-line pt-4"
+              >
+                <div className="flex items-baseline justify-between gap-3">
+                  <h3 className="text-lg font-semibold text-ink group-hover:text-teal">
+                    {cat.title}
+                  </h3>
+                  <span className="text-xs tabular-nums text-ink-soft">{cat.posts.length}</span>
+                </div>
+                <p className="mt-2 text-sm leading-6 text-ink-soft">{cat.blurb}</p>
+              </Link>
+            ))}
+          </div>
+        </div>
+      </section>
+
+      <section className="border-t border-line">
         <div className="mx-auto max-w-6xl px-5 py-16 md:px-8 md:py-20">
           <h2 className="font-display text-4xl tracking-tight text-ink">最近更新</h2>
           <p className="mt-2 text-ink-soft">按日期排序的最新笔记。</p>
