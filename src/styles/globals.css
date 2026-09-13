@@ -163,7 +163,7 @@
     pointer-events: none;
     position: fixed;
     inset: 0;
-    z-index: 50;
+    z-index: 20;
     opacity: 0.035;
     background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
   }
@@ -193,5 +193,148 @@
   to {
     opacity: 1;
     transform: translateY(0);
+  }
+}
+
+@keyframes nika-fight-bob {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-5px);
+  }
+}
+
+.nika-stage {
+  position: fixed;
+  right: 0.35rem;
+  bottom: 0.35rem;
+  z-index: 30;
+  pointer-events: none;
+}
+
+.nika-stage-corner {
+  width: min(42vw, 200px);
+  height: min(42vw, 200px);
+}
+
+/* 脖子/脚/右手拉满：仍贴右侧，高度撑满 */
+.nika-stage-tall {
+  top: 0;
+  bottom: 0;
+  right: 0.35rem;
+  width: min(46vw, 240px);
+  height: auto;
+}
+
+/* 左手拉满：从右侧向左铺开 */
+.nika-stage-wide {
+  top: auto;
+  bottom: 0.35rem;
+  right: 0.35rem;
+  left: 0.35rem;
+  width: auto;
+  height: min(42vw, 280px);
+}
+
+/* 肚子一步撑大 */
+.nika-stage-belly {
+  top: auto;
+  bottom: 0.35rem;
+  right: 0.35rem;
+  width: min(70vw, 420px);
+  height: min(78vw, 480px);
+}
+
+.nika-panel {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: auto;
+}
+
+.nika-figure {
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  animation: nika-fight-bob 2.4s ease-in-out infinite;
+  transform-origin: 50% 100%;
+  filter: drop-shadow(0 12px 22px rgba(0, 0, 0, 0.35));
+  transition: height 380ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.nika-stage-tall .nika-figure,
+.nika-stage-wide .nika-figure,
+.nika-stage-belly .nika-figure {
+  animation: none;
+}
+
+.nika-hit {
+  cursor: pointer;
+}
+
+.nika-hit:hover {
+  filter: brightness(1.08);
+}
+
+.nika-hint {
+  position: absolute;
+  bottom: 0.1rem;
+  left: 0;
+  right: 0;
+  z-index: 3;
+  margin: 0;
+  text-align: center;
+  font-size: 10px;
+  color: color-mix(in oklab, var(--ink-soft) 85%, transparent);
+  pointer-events: none;
+}
+
+.nika-stage-tall .nika-hint,
+.nika-stage-wide .nika-hint,
+.nika-stage-belly .nika-hint {
+  bottom: 0.35rem;
+  font-size: 11px;
+}
+
+@media (min-width: 768px) {
+  .nika-stage {
+    right: 0.6rem;
+    bottom: 0.6rem;
+  }
+
+  .nika-stage-corner {
+    width: 220px;
+    height: 220px;
+  }
+
+  .nika-stage-tall {
+    right: 0.6rem;
+    width: 260px;
+  }
+
+  .nika-stage-wide {
+    right: 0.6rem;
+    bottom: 0.6rem;
+    left: 0.6rem;
+    height: 300px;
+  }
+
+  .nika-stage-belly {
+    right: 0.6rem;
+    bottom: 0.6rem;
+    width: 460px;
+    height: 520px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .nika-figure {
+    animation: none;
+    transition: none;
   }
 }

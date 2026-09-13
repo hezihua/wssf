@@ -1,4 +1,6 @@
 import type { Metadata } from 'next'
+import { CornerNika } from '@/components/CornerNika'
+import { ParticleField } from '@/components/ParticleField'
 import { SiteFooter, SiteHeader } from '@/components/SiteChrome'
 import { site } from '@/lib/site'
 import '@/styles/globals.css'
@@ -25,11 +27,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           rel="stylesheet"
         />
       </head>
-      <body>
+      <body className="relative">
+        <ParticleField />
         <div className="grain" aria-hidden />
-        <SiteHeader />
-        <main>{children}</main>
-        <SiteFooter />
+        <div className="relative z-10">
+          <SiteHeader />
+          <main>{children}</main>
+          <SiteFooter />
+        </div>
+        <CornerNika />
       </body>
     </html>
   )
