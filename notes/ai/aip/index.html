@@ -1,0 +1,416 @@
+<!DOCTYPE html><!--Hh14vrHlftfZpLAKioeJ1--><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/wssf/next/static/css/569ebd99b263297b.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/wssf/next/static/chunks/webpack-b7d03e4103fbbc14.js"/><script src="/wssf/next/static/chunks/67347c79-3721fe9001d4c873.js" async=""></script><script src="/wssf/next/static/chunks/136-68e3faf5d04f11b0.js" async=""></script><script src="/wssf/next/static/chunks/main-app-35ca4e92ed24529d.js" async=""></script><script src="/wssf/next/static/chunks/726-0d5fee421ca0697c.js" async=""></script><script src="/wssf/next/static/chunks/app/layout-3fc013c111ef7a83.js" async=""></script><script src="/wssf/next/static/chunks/app/notes/page-88af5645832fc40b.js" async=""></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/><title>Infini Ontology：AIP 闭环要点总结 · 前端小小栈</title><meta name="description" content="本文整理自项目讨论，说明开源版 AIP（Artificial Intelligence Platform）闭环在做什么、和传统系统差在哪、以及当前实现如何把 Agent 的读写面收束到 Ontology / Action。 目标不是复刻绚丽"/><script>(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})();</script><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Syne:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><script src="/wssf/next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="relative"><div hidden=""><!--$--><!--/$--></div><canvas class="pointer-events-none fixed inset-0 z-0" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div><div class="relative z-10"><header class="sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md"><div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8"><a class="group flex items-baseline gap-2" href="/wssf/"><span class="font-display text-2xl tracking-tight text-ink group-hover:text-teal">前端小小栈</span><span class="hidden text-xs uppercase tracking-[0.18em] text-ink-soft sm:inline">notes</span></a><nav class="flex items-center gap-5 text-sm text-ink-soft"><a class="hover:text-teal" href="/wssf/">首页</a><a class="hover:text-teal" href="/wssf/notes/">全部笔记</a><a href="https://github.com/hezihua" target="_blank" rel="noreferrer" class="hover:text-teal">GitHub</a><button type="button" class="inline-flex h-8 w-8 items-center justify-center border border-line text-ink-soft hover:border-teal hover:text-teal" aria-label="切换到深色主题" title="深色"><span class="opacity-0" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path></svg></span></button></nav></div></header><div class="market-strip w-full border-b border-line/70"><div class="tradingview-widget-container w-full"></div></div><main><div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[240px_1fr]"><button type="button" class="mb-4 inline-flex items-center gap-2 border border-line bg-paper-deep/50 px-3 py-2 text-sm text-ink lg:hidden" aria-expanded="false">展开目录</button><aside class="hidden lg:block lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto"><p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">栏目</p><ul class="space-y-4 text-sm"><li><p class="mb-1.5 font-medium text-ink">AI</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/本体论应用场景/">本体论和本体建模：具体应用场景究竟是什么？</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/ontology-driven-agent/">从人月聊IT到 Ontology-driven Agent：可落地的本体平台路线</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/piwechat/">Pi 微信机器人</a></li><li><a class="text-teal" href="/wssf/notes/ai/aip/">Infini Ontology：AIP 闭环要点总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/ollama_qwen_deploy_guide/">Ollama + Qwen 部署</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/编程新架构/">业务与 AI 协作架构图汇总</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/taskmaster/">taskmaster</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/llama-factory/">llama-factory 部署</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/openclaw/">openclaw 连飞书</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">工程化</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/backend/">后端架构全景解析</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/project_design/">如何一个人独自负责完整的后端项目</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/数据库与金融数据工具/">数据库与金融数据工具</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/passkey_complete/">passkey</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/passkey/">passkey 登录</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/3/">gitflow</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/代码/crypt/">RSA 加密</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/代码/signature/">数字签名</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/1/">verdaccio 私有仓库</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/2/">vue + vscode 断点调试</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">运维</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/7/">fnm 离线安装</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/6/">pm2 常用命令</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/1/">常用命令 1</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/2/">常用命令 2</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/4/">镜像源配置</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/3/">常用命令 3</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/5/">自签名证书</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/3/">作用</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/4/">应用场景</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/6/">Windows 脚本</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/4/">systemd</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/5/">软件包管理</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/1/">一次编译</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/2/">上传文件</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/1/">镜像 / 容器</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/2/">数据卷 / 网络</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/3/">Dockerfile</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">工具与排障</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/v2rayN/">v2rayN 指南</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/pr/">从 Fork 向上游开 PR</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/go/">WSL 安装 Go</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/1/">GitHub 连接问题</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/有用的工具/1/">常用链接</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">项目与副业</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/stripe-supabase-key/">Stripe / Supabase</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/pkgcli/">pkgcli 以及相关模板开发</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/request/">request</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/ruoyi/">ruoyi项目总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/工具/">副业工具</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/技术/">副业技术</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/idea/">副业idea</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/nextjs/">Next.js 项目</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/media/">音视频相关功能开发</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/monitor/">前端监控</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/monorepo/">monorepo 总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/list/">项目汇总</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/rtsp/">rtsp项目总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/regist/">Windows 自定义协议</a></li></ul></li></ul></aside><article><p class="text-xs font-semibold uppercase tracking-[0.2em] text-teal">AI</p><h1 class="mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl">Infini Ontology：AIP 闭环要点总结</h1><p class="mt-4 text-sm text-ink-soft">jimmy<!-- --> · 2026-8-21</p><div class="prose-note mt-10"><p>本文整理自项目讨论，说明开源版 AIP（Artificial Intelligence Platform）闭环在做什么、和传统系统差在哪、以及当前实现如何把 Agent 的读写面收束到 Ontology / Action。</p>
+<hr>
+<h2>一、核心闭环</h2>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>Raw Data → Ontology（业务对象）→ Agent（编排）→ Action（受控写回）</span></span></code></pre></figure>
+<p>目标不是复刻绚丽界面，而是让「死表」变成「活的业务对象」：大模型能读、能写，但必须走平台规则与安全边界。</p>
+<p>当前仓库大致对应：</p>
+<table>
+<thead>
+<tr>
+<th>层</th>
+<th>作用</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Ontology</td>
+<td>ObjectType / LinkType / ActionType 注册与校验</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Data</td>
+<td>对象实例与 Action 记录存储</td>
+<td>✅（轻量）</td>
+</tr>
+<tr>
+<td>Agent</td>
+<td>LangGraph / heuristic，只调 Ontology 工具</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Action + HITL</td>
+<td>pending → 人工批准 → 写回</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>Casbin</td>
+<td>对象读过滤、Action submit/approve</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>前端</td>
+<td>Next.js 控制台（<code>frontend/</code>，端口 3010）</td>
+<td>✅</td>
+</tr>
+<tr>
+<td>MCP</td>
+<td>给外部客户端插线</td>
+<td>❌ 已跳过（自研 Agent）</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>二、和「传统写回按钮」的差别</h2>
+<h3>传统</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>用户改表单 → 点保存 → API 直接 UPDATE → 完成</span></span></code></pre></figure>
+<p>写操作绑在 UI 上，一次请求里改库。</p>
+<h3>Infini / AIP</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>Agent 理解意图</span></span>
+<span data-line=""><span>  → 生成 Action（pending，尚未改业务对象）</span></span>
+<span data-line=""><span>  → Casbin：谁能提、谁能批</span></span>
+<span data-line=""><span>  → Human-in-the-loop（如 carol 批准）</span></span>
+<span data-line=""><span>  → 真正写回 Object</span></span></code></pre></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统写回按钮</th>
+<th>Action + HITL</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>改库时机</td>
+<td>点击即写</td>
+<td>批准后才写</td>
+</tr>
+<tr>
+<td>AI 角色</td>
+<td>容易变成「代你点保存」</td>
+<td>只能提交受控 Action</td>
+</tr>
+<tr>
+<td>审计</td>
+<td>多为日志</td>
+<td>有独立 Action 记录</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>三、「传统也能审批」——那 AIP 还多什么？</h2>
+<p>传统审批流里同样可以：alice 提交 → admin/carol 批准 → 再写库。<br>
+<strong>有没有 HITL，不是 AIP 的独家发明。</strong></p>
+<p>真正多出来的是约束面，尤其是对 AI：</p>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>传统审批</th>
+<th>AIP / Infini</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>提交物</td>
+<td>表单 / 流程实例</td>
+<td>本体上声明的 <strong>ActionType</strong>（强类型参数）</td>
+</tr>
+<tr>
+<td>写库</td>
+<td>流程节点里跑业务代码 / SQL</td>
+<td><strong>只能</strong>执行已注册 Action</td>
+</tr>
+<tr>
+<td>AI 通道</td>
+<td>常另开接口直写，与人走两套路</td>
+<td><strong>人和 Agent 写库都走 Action</strong></td>
+</tr>
+<tr>
+<td>读侧</td>
+<td>多在提交后卡权限</td>
+<td>提交前 Agent 只能看见授权 Objects</td>
+</tr>
+</tbody>
+</table>
+<p>一句话：</p>
+<ul>
+<li>传统也能做人审。</li>
+<li>AIP 把「可写什么」收成 Ontology 上的 Action；LLM <strong>只能提议这些 Action</strong>；读写落在同一套对象语义和权限里。</li>
+</ul>
+<p>若去掉 Agent、只留人工「提议 Action → 批准」，外表会像传统审批；<strong>对 AI 的统一写网关与机读能力目录</strong>才是差异点。</p>
+<hr>
+<h2>四、点击「运行 Agent」打了哪些接口？</h2>
+<p>前端会连续调用：</p>
+<ol>
+<li>
+<p><strong><code>POST /agent/run</code></strong><br>
+真正跑 Agent：读对象、提议 Action（写入 pending）。</p>
+</li>
+<li>
+<p><strong><code>GET /actions?status=pending</code></strong><br>
+刷新右侧 HITL 列表。</p>
+</li>
+</ol>
+<p>批准写回是另一次操作：</p>
+<ul>
+<li><strong><code>POST /actions/{id}/approve</code></strong></li>
+</ul>
+<p>不是「运行 Agent」本身自动改库。</p>
+<hr>
+<h2>五、「读对象、提议 Action、pending」分别是什么？</h2>
+<h3>读哪个对象？</h3>
+<p>以「将工单 t_100 标记为已解决」为例（heuristic）：</p>
+<ol>
+<li>读 Ontology schema（有哪些 Object / Action）</li>
+<li>读业务对象 <strong><code>Ticket</code> / <code>t_100</code></strong></li>
+<li><code>submit_action(update_ticket_status, …)</code></li>
+</ol>
+<p>受 Casbin 约束：例如 alice 只能看到 <code>c_001</code> 相关对象。<br>
+Demo 里 ObjectType 目前主要是 <code>Ticket</code>、<code>Customer</code>。</p>
+<h3>提议是临时的吗？</h3>
+<p><strong>不是纯内存临时变量</strong>，而是落库的 Action 记录（表 <code>ontology_actions</code>）：</p>
+<ul>
+<li>状态先为 <code>pending</code></li>
+<li>有稳定 <code>id</code>（UUID）</li>
+<li>批准后才改业务 Object；拒绝则对象不变</li>
+</ul>
+<p>「临时」指的是 <strong>还没写业务对象</strong>，不是请求结束就丢。</p>
+<h3>入职入库 / 离职出库可以吗？</h3>
+<p>可以，同一套模式。工单只是 demo，换成人事即：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>ObjectType: Employee</span></span>
+<span data-line=""><span>ActionType: onboard_employee   → 入库</span></span>
+<span data-line=""><span>ActionType: offboard_employee  → 出库</span></span></code></pre></figure>
+<p>闭环不变：读对象 → 提议 Action（pending）→ 人批 → 写回。<br>
+前提：先在本体登记 ActionType、定好参数与权限，并实现 approve 后的执行器。</p>
+<hr>
+<h2>六、和「以前一个功能写一个 API」的差别</h2>
+<p>不完全是「以前给人，现在给 Agent」。</p>
+<h3>以前</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>POST /tickets/{id}/resolve</span></span>
+<span data-line=""><span>POST /employees/onboard</span></span>
+<span data-line=""><span>…</span></span></code></pre></figure>
+<p>每个接口各自校验、权限、写库；前端 / 脚本 / Agent 各自对接不同 URL。</p>
+<h3>现在</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>Ontology 登记 Object / Action</span></span>
+<span data-line=""><span>统一写入口：POST /actions（或工具 submit_action）</span></span>
+<span data-line=""><span>能力目录：GET /ontology/agent-context</span></span></code></pre></figure>
+<table>
+<thead>
+<tr>
+<th></th>
+<th>散装 API</th>
+<th>Ontology / Action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>能力发现</td>
+<td>靠文档 / Prompt</td>
+<td><code>agent-context</code> 机读</td>
+</tr>
+<tr>
+<td>写入口</td>
+<td>每功能一个 endpoint</td>
+<td>统一 Action 网关</td>
+</tr>
+<tr>
+<td>服务对象</td>
+<td>人、Agent 常两套</td>
+<td>人与 Agent 共用语义</td>
+</tr>
+</tbody>
+</table>
+<p><strong>本质</strong>：给业务能力建「机读目录 + 统一写网关」，而不是简单把 API 的调用方从人换成 Agent。</p>
+<hr>
+<h2>七、传统 API 仍适用的场景（Ontology / Action 不是银弹）</h2>
+<p>Ontology + Action 适合「业务语义强、要给 Agent 安全动手、要统一审计/审批」的路径。<br>
+它<strong>不能、也不该</strong>取代所有接口。下面这些场景，继续用（或优先用）普通 API 更合适：</p>
+<h3>更适合散装 / 专用 API 的情况</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>高 QPS、低延迟读写</td>
+<td>列表分页、搜索、实时推送；走 Action + HITL 过重</td>
+</tr>
+<tr>
+<td>简单 CRUD / 管理后台</td>
+<td>字段编辑、配置页；人为主、无 Agent 参与时，直接 API 更清晰</td>
+</tr>
+<tr>
+<td>文件上传、流式、WebSocket</td>
+<td>传输形态特殊，不适合塞进 Action payload</td>
+</tr>
+<tr>
+<td>登录、OAuth、Webhook 回调</td>
+<td>协议型接口，不是「业务对象动作」</td>
+</tr>
+<tr>
+<td>批量 ETL / 数仓管道</td>
+<td>Airbyte、dbt、作业调度；属于数据层，不是 Agent 写回</td>
+</tr>
+<tr>
+<td>跨系统集成（对方只认固定 REST）</td>
+<td>对外契约已定；可对内再接到 Action execute</td>
+</tr>
+<tr>
+<td>健康检查、指标、内部运维</td>
+<td><code>/health</code>、metrics；与业务 Ontology 无关</td>
+</tr>
+</tbody>
+</table>
+<h3>更适合 Ontology / Action 的情况</h3>
+<table>
+<thead>
+<tr>
+<th>场景</th>
+<th>原因</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Agent 要读懂业务并提议变更</td>
+<td>需要机读的 Object / Action 目录</td>
+</tr>
+<tr>
+<td>写操作风险高、要人审</td>
+<td>入职、调岗、关停资源、改关键状态等</td>
+</tr>
+<tr>
+<td>多端（人 + Agent + 将来其它客户端）共用写语义</td>
+<td>避免每人一套写接口</td>
+</tr>
+<tr>
+<td>要按对象做细粒度授权</td>
+<td>Casbin 挂在 Object / Action 上更自然</td>
+</tr>
+</tbody>
+</table>
+<h3>共存方式（推荐心智）</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>对外 / 专用 API          Ontology 读 + Action 写</span></span>
+<span data-line=""><span>（集成、CRUD、上传…）  →  （Agent、高风险业务变更）</span></span>
+<span data-line=""><span>         ↘                    ↙</span></span>
+<span data-line=""><span>           同一套 domain service</span></span></code></pre></figure>
+<ul>
+<li><strong>不是</strong>「所有功能都登记成 Action」</li>
+<li><strong>而是</strong>「Agent 能动的手、以及要统一治理的写，走 Action；其余该 API 还 API」</li>
+<li>Action 的 <code>execute</code> 往往 <strong>调用</strong> 已有业务服务，而不是把业务逻辑重写一遍</li>
+</ul>
+<p>若强行把分页查询、文件上传也做成 Action，只会增加延迟和复杂度，收益很小——<strong>银弹不存在，边界比口号重要</strong>。</p>
+<hr>
+<h2>八、<code>/ontology/agent-context</code> 是什么？</h2>
+<p><strong>不是文件，是 HTTP 接口。</strong></p>
+<ul>
+<li>地址：<code>GET http://127.0.0.1:8000/ontology/agent-context</code></li>
+<li>路由：<code>src/infini_ontology/api.py</code> → <code>get_agent_context</code></li>
+<li>数据：<code>registry.agent_context()</code>（<code>ontology/registry.py</code>）</li>
+<li>作用：把已注册的 Object / Link / Action（并按 Casbin 过滤可 submit 的 Action）收成 JSON，供 Agent 规划</li>
+</ul>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">curl</span><span style="color:#6CB6FF"> -s</span><span style="color:#6CB6FF"> -H</span><span style="color:#96D0FF"> 'X-User-Id: alice'</span><span style="color:#96D0FF"> http://127.0.0.1:8000/ontology/agent-context</span><span style="color:#F47067"> |</span><span style="color:#F69D50"> jq</span><span style="color:#96D0FF"> .</span></span></code></pre></figure>
+<p>也可在 <a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a> 中调试。</p>
+<hr>
+<h2>九、「读写面收束到 Ontology/Action」怎么实现？</h2>
+<p>不是靠 Agent 自觉，而是多层硬约束：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>Agent（LLM / heuristic）</span></span>
+<span data-line=""><span>   │ 只能调白名单工具</span></span>
+<span data-line=""><span>   ▼</span></span>
+<span data-line=""><span>get_ontology_schema / list_objects / get_object / follow_link / submit_action</span></span>
+<span data-line=""><span>   │</span></span>
+<span data-line=""><span>   ▼</span></span>
+<span data-line=""><span>Registry 校验 + ObjectStore + ActionService + Casbin</span></span>
+<span data-line=""><span>   │</span></span>
+<span data-line=""><span>   ▼</span></span>
+<span data-line=""><span>真正改库只在 Action approve → execute</span></span></code></pre></figure>
+<ol>
+<li>
+<p><strong>工具白名单</strong>（<code>agent/tools.py</code>）<br>
+无 SQL、无任意 PATCH；LLM 只能 <code>bind_tools</code> 上述工具。</p>
+</li>
+<li>
+<p><strong>读路径</strong><br>
+必须是已注册 ObjectType；实例再过 Casbin 过滤。</p>
+</li>
+<li>
+<p><strong>写路径</strong><br>
+只能 <code>submit_action</code> → <code>registry.get_action</code>（未登记即失败）→ 参数校验 → Casbin submit → 通常只写 pending；改库要 approve。</p>
+</li>
+<li>
+<p><strong>Prompt</strong>（软约束）<br>
+强调写必须走 <code>submit_action</code>；硬约束仍是工具层 + 服务层。</p>
+</li>
+</ol>
+<hr>
+<h2>十、还要不要写业务接口给 Ontology 用？</h2>
+<p><strong>要有业务逻辑，但不一定再给人/Agent 各暴露一套 REST。</strong></p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>业务逻辑（建员工、关账号、改状态…）</span></span>
+<span data-line=""><span>        ↑</span></span>
+<span data-line=""><span>Ontology / Action（登记 + 校验 + 权限 + HITL）</span></span>
+<span data-line=""><span>        ↑</span></span>
+<span data-line=""><span>Agent / 前端（读 Object + submit_action）</span></span></code></pre></figure>
+<ul>
+<li>Ontology：契约与入口</li>
+<li>业务实现：Action <code>execute</code> 时调用的 domain service / 内部 API</li>
+</ul>
+<p>当前 demo 的业务写在 <code>ActionService._dispatch</code> 内；生产中更常见是 execute 转调已有服务。</p>
+<table>
+<thead>
+<tr>
+<th>要准备</th>
+<th>不必重复</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ObjectType / ActionType 登记</td>
+<td>给 Agent 一人一个平行业务 URL</td>
+</tr>
+<tr>
+<td>Action 参数、权限、HITL</td>
+<td>Agent 直连旧 CRUD</td>
+</tr>
+<tr>
+<td>execute 里的真实业务逻辑</td>
+<td>两套完全不同的写路径</td>
+</tr>
+</tbody>
+</table>
+<p>新功能推荐顺序：<strong>登记 Action → 实现 executor →（按需）HITL</strong>，而不是先给 Agent 再开平行 API。</p>
+<hr>
+<h2>十一、本地怎么跑</h2>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#768390"># API</span></span>
+<span data-line=""><span style="color:#F69D50">uv</span><span style="color:#96D0FF"> sync</span></span>
+<span data-line=""><span style="color:#F69D50">uv</span><span style="color:#96D0FF"> run</span><span style="color:#96D0FF"> uvicorn</span><span style="color:#96D0FF"> infini_ontology.main:app</span><span style="color:#6CB6FF"> --reload</span><span style="color:#6CB6FF"> --app-dir</span><span style="color:#96D0FF"> src</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="color:#768390"># UI（默认 3010，避免占 3000）</span></span>
+<span data-line=""><span style="color:#6CB6FF">cd</span><span style="color:#96D0FF"> frontend</span><span style="color:#ADBAC7"> &#x26;&#x26; </span><span style="color:#F69D50">npm</span><span style="color:#96D0FF"> install</span><span style="color:#ADBAC7"> &#x26;&#x26; </span><span style="color:#F69D50">npm</span><span style="color:#96D0FF"> run</span><span style="color:#96D0FF"> dev</span></span></code></pre></figure>
+<ul>
+<li>API 文档：<a href="http://127.0.0.1:8000/docs">http://127.0.0.1:8000/docs</a></li>
+<li>控制台：<a href="http://localhost:3010">http://localhost:3010</a></li>
+</ul>
+<p>演示用户（<code>X-User-Id</code>）：</p>
+<table>
+<thead>
+<tr>
+<th>用户</th>
+<th>能力</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>alice</td>
+<td>仅 Acme（c_001）相关对象；可提议 Action；不能批准</td>
+</tr>
+<tr>
+<td>bob</td>
+<td>仅 Beta（c_002）；只读</td>
+</tr>
+<tr>
+<td>carol</td>
+<td>可 approve / reject</td>
+</tr>
+<tr>
+<td>admin</td>
+<td>全权限</td>
+</tr>
+</tbody>
+</table>
+<hr>
+<h2>十二、一句话收束</h2>
+<p>Infini 这套东西的关键，不是「多一个审批按钮」或「API 改给 Agent 用」，也不是取代所有接口，而是：</p>
+<p><strong>用 Ontology 定义业务对象与可执行动作；对 Agent 和高风险写，用统一 Action 网关 + 权限 + HITL 收束；其余高流量 CRUD、协议型、管道型接口继续用普通 API，两者共用底层业务服务。</strong></p></div><nav class="mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2"><a class="group block" href="/wssf/notes/ai/piwechat/"><span class="text-xs uppercase tracking-[0.16em] text-ink-soft">上一篇</span><p class="mt-1 font-medium text-ink group-hover:text-teal">Pi 微信机器人</p></a><a class="group block text-right sm:justify-self-end" href="/wssf/notes/ai/ollama_qwen_deploy_guide/"><span class="text-xs uppercase tracking-[0.16em] text-ink-soft">下一篇</span><p class="mt-1 font-medium text-ink group-hover:text-teal">Ollama + Qwen 部署</p></a></nav></article></div><!--$--><!--/$--></main><footer class="mt-24 border-t border-line"><div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:px-8"><p>© <!-- -->2026<!-- --> <!-- -->前端小小栈</p><div class="flex gap-4"><a href="https://github.com/hezihua" target="_blank" rel="noreferrer" class="hover:text-teal">GitHub</a><a href="https://juejin.cn/user/1081575170131006" target="_blank" rel="noreferrer" class="hover:text-teal">掘金</a></div></div></footer></div><div class="nika-stage nika-stage-corner" role="presentation"><div class="nika-panel"><svg viewBox="0 0 280 280" class="nika-figure" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMax meet"><title>一次只拉一个部位，全部一步到位</title><defs><radialGradient id="nikaBattleGlow" cx="50%" cy="78%" r="55%"><stop offset="0%" stop-color="#fff7c2" stop-opacity="0.9"></stop><stop offset="55%" stop-color="#fbbf24" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"></stop></radialGradient><linearGradient id="nikaBattleSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe0bd"></stop><stop offset="100%" stop-color="#f0b27a"></stop></linearGradient></defs><ellipse cx="140" cy="168" rx="110" ry="120" fill="url(#nikaBattleGlow)"></ellipse><g class="nika-hit"><ellipse cx="140" cy="168" rx="38" ry="32" fill="#ef4444"></ellipse><path d="M105.8 170 c 15.200000000000001 11.2 53.199999999999996 11.2 68.4 0" stroke="#fbbf24" stroke-width="5" fill="none" stroke-linecap="round"></path></g><g class="nika-hit"><path d="M112 196 L108 232 L126 232 L122 196 Z" fill="#1d4ed8"></path><ellipse cx="117" cy="234" rx="14" ry="6" fill="#111827"></ellipse></g><g class="nika-hit"><path d="M158 196 L154 232 L172 232 L168 196 Z" fill="#1d4ed8"></path><ellipse cx="163" cy="234" rx="14" ry="6" fill="#111827"></ellipse></g><g class="nika-hit"><path d="M168 116 Q 201 115 234 118" fill="none" stroke="#f0b27a" stroke-width="16" stroke-linecap="round"></path><circle cx="234" cy="118" r="16" fill="#f0b27a" stroke="#d97706" stroke-width="1.3"></circle></g><g class="nika-hit"><path d="M112 116 Q 88 122 64 132" fill="none" stroke="#f0b27a" stroke-width="14" stroke-linecap="round"></path><circle cx="64" cy="132" r="14" fill="#f0b27a" stroke="#d97706" stroke-width="1.3"></circle></g><g class="nika-hit"><rect x="128" y="110" width="24" height="8" rx="10" fill="url(#nikaBattleSkin)"></rect></g><g class="nika-hit"><circle cx="140" cy="96" r="40" fill="url(#nikaBattleSkin)" stroke="#d97706" stroke-width="1.5"></circle><g fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"><ellipse cx="102" cy="76" rx="15" ry="19" transform="rotate(-16 102 76)"></ellipse><ellipse cx="118" cy="58" rx="17" ry="20" transform="rotate(-6 118 58)"></ellipse><ellipse cx="140" cy="50" rx="21" ry="18"></ellipse><ellipse cx="162" cy="58" rx="17" ry="20" transform="rotate(8 162 58)"></ellipse><ellipse cx="178" cy="78" rx="15" ry="19" transform="rotate(18 178 78)"></ellipse><ellipse cx="96" cy="102" rx="11" ry="15" transform="rotate(-28 96 102)"></ellipse><ellipse cx="184" cy="102" rx="11" ry="15" transform="rotate(28 184 102)"></ellipse></g><path d="M118 94c4-9 14-9 18 0" fill="none" stroke="#111827" stroke-width="3.6" stroke-linecap="round"></path><path d="M144 94c4-9 14-9 18 0" fill="none" stroke="#111827" stroke-width="3.6" stroke-linecap="round"></path><path d="M150 102v13" stroke="#b45309" stroke-width="2.1" stroke-linecap="round"></path><path d="M146 106h8M146 111h8" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"></path><path d="M112 114c8 18 48 18 56 0c-10 8-46 8-56 0z" fill="#111827"></path><path d="M118 116c7 10 37 10 44 0" fill="#fff"></path><circle cx="110" cy="108" r="5.5" fill="#fb7185" opacity="0.45"></circle><circle cx="170" cy="108" r="5.5" fill="#fb7185" opacity="0.45"></circle></g></svg></div></div><script src="/wssf/next/static/chunks/webpack-b7d03e4103fbbc14.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7639,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"ParticleField\"]\n3:I[9726,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"568\",\"static/chunks/app/notes/page-88af5645832fc40b.js\"],\"\"]\n4:I[4622,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"ThemeToggle\"]\n5:I[1316,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"MarketStrip\"]\n6:I[3559,[],\"\"]\n7:I[4795,[],\"\"]\n8:I[8935,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"CornerNika\"]\na:I[9902,[],\"OutletBoundary\"]\nc:I[5347,[],\"AsyncMetadataOutlet\"]\ne:I[9902,[],\"ViewportBoundary\"]\n10:I[9902,[],\"MetadataBoundary\"]\n11:\"$Sreact.suspense\"\n13:I[8557,[],\"\"]\n:HL[\"/wssf/next/static/css/569ebd99b263297b.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"Hh14vrHlftfZpLAKioeJ1\",\"p\":\"/wssf\",\"c\":[\"\",\"notes\",\"ai\",\"aip\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"notes\",{\"children\":[[\"slug\",\"ai/aip\",\"c\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/wssf/next/static/css/569ebd99b263297b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'\u0026\u0026window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})();\"}}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500\u0026family=Manrope:wght@400;500;600;700\u0026family=Syne:wght@500;600;700;800\u0026display=swap\",\"rel\":\"stylesheet\"}]]}],[\"$\",\"body\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"$L2\",null,{}],[\"$\",\"div\",null,{\"className\":\"grain\",\"aria-hidden\":true}],[\"$\",\"div\",null,{\"className\":\"relative z-10\",\"children\":[[\"$\",\"header\",null,{\"className\":\"sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8\",\"children\":[[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"group flex items-baseline gap-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"font-display text-2xl tracking-tight text-ink group-hover:text-teal\",\"children\":\"前端小小栈\"}],[\"$\",\"span\",null,{\"className\":\"hidden text-xs uppercase tracking-[0.18em] text-ink-soft sm:inline\",\"children\":\"notes\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex items-center gap-5 text-sm text-ink-soft\",\"children\":[[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"hover:text-teal\",\"children\":\"首页\"}],[\"$\",\"$L3\",null,{\"href\":\"/notes/\",\"className\":\"hover:text-teal\",\"children\":\"全部笔记\"}],[\"$\",\"a\",null,{\"href\":\"https://github.com/hezihua\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"GitHub\"}],[\"$\",\"$L4\",null,{}]]}]]}]}],[\"$\",\"$L5\",null,{}],[\"$\",\"main\",null,{\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-3xl px-5 py-24 text-center md:px-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"font-display text-5xl text-ink\",\"children\":\"404\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-ink-soft\",\"children\":\"没有找到这篇文章。\"}],[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"mt-8 inline-block text-teal hover:underline\",\"children\":\"返回首页\"}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"mt-24 border-t border-line\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:px-8\",\"children\":[[\"$\",\"p\",null,{\"children\":[\"© \",2026,\" \",\"前端小小栈\"]}],[\"$\",\"div\",null,{\"className\":\"flex gap-4\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://github.com/hezihua\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"GitHub\"}],[\"$\",\"a\",null,{\"href\":\"https://juejin.cn/user/1081575170131006\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"掘金\"}]]}]]}]}]]}],[\"$\",\"$L8\",null,{}]]}]]}]]}],{\"children\":[\"notes\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"ai/aip\",\"c\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L9\",null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",[\"$\",\"$Lc\",null,{\"promise\":\"$@d\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$Le\",null,{\"children\":\"$Lf\"}],null],[\"$\",\"$L10\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$11\",null,{\"fallback\":null,\"children\":\"$L12\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$13\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"14:I[9409,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"568\",\"static/chunks/app/notes/page-88af5645832fc40b.js\"],\"Sidebar\"]\n15:T4700,"])</script><script>self.__next_f.push([1,"\u003cp\u003e本文整理自项目讨论，说明开源版 AIP（Artificial Intelligence Platform）闭环在做什么、和传统系统差在哪、以及当前实现如何把 Agent 的读写面收束到 Ontology / Action。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e一、核心闭环\u003c/h2\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003eRaw Data → Ontology（业务对象）→ Agent（编排）→ Action（受控写回）\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cp\u003e目标不是复刻绚丽界面，而是让「死表」变成「活的业务对象」：大模型能读、能写，但必须走平台规则与安全边界。\u003c/p\u003e\n\u003cp\u003e当前仓库大致对应：\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e层\u003c/th\u003e\n\u003cth\u003e作用\u003c/th\u003e\n\u003cth\u003e状态\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eOntology\u003c/td\u003e\n\u003ctd\u003eObjectType / LinkType / ActionType 注册与校验\u003c/td\u003e\n\u003ctd\u003e✅\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eData\u003c/td\u003e\n\u003ctd\u003e对象实例与 Action 记录存储\u003c/td\u003e\n\u003ctd\u003e✅（轻量）\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAgent\u003c/td\u003e\n\u003ctd\u003eLangGraph / heuristic，只调 Ontology 工具\u003c/td\u003e\n\u003ctd\u003e✅\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAction + HITL\u003c/td\u003e\n\u003ctd\u003epending → 人工批准 → 写回\u003c/td\u003e\n\u003ctd\u003e✅\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eCasbin\u003c/td\u003e\n\u003ctd\u003e对象读过滤、Action submit/approve\u003c/td\u003e\n\u003ctd\u003e✅\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e前端\u003c/td\u003e\n\u003ctd\u003eNext.js 控制台（\u003ccode\u003efrontend/\u003c/code\u003e，端口 3010）\u003c/td\u003e\n\u003ctd\u003e✅\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eMCP\u003c/td\u003e\n\u003ctd\u003e给外部客户端插线\u003c/td\u003e\n\u003ctd\u003e❌ 已跳过（自研 Agent）\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003chr\u003e\n\u003ch2\u003e二、和「传统写回按钮」的差别\u003c/h2\u003e\n\u003ch3\u003e传统\u003c/h3\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003e用户改表单 → 点保存 → API 直接 UPDATE → 完成\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cp\u003e写操作绑在 UI 上，一次请求里改库。\u003c/p\u003e\n\u003ch3\u003eInfini / AIP\u003c/h3\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003eAgent 理解意图\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e  → 生成 Action（pending，尚未改业务对象）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e  → Casbin：谁能提、谁能批\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e  → Human-in-the-loop（如 carol 批准）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e  → 真正写回 Object\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e传统写回按钮\u003c/th\u003e\n\u003cth\u003eAction + HITL\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e改库时机\u003c/td\u003e\n\u003ctd\u003e点击即写\u003c/td\u003e\n\u003ctd\u003e批准后才写\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAI 角色\u003c/td\u003e\n\u003ctd\u003e容易变成「代你点保存」\u003c/td\u003e\n\u003ctd\u003e只能提交受控 Action\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e审计\u003c/td\u003e\n\u003ctd\u003e多为日志\u003c/td\u003e\n\u003ctd\u003e有独立 Action 记录\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003chr\u003e\n\u003ch2\u003e三、「传统也能审批」——那 AIP 还多什么？\u003c/h2\u003e\n\u003cp\u003e传统审批流里同样可以：alice 提交 → admin/carol 批准 → 再写库。\u003cbr\u003e\n\u003cstrong\u003e有没有 HITL，不是 AIP 的独家发明。\u003c/strong\u003e\u003c/p\u003e\n\u003cp\u003e真正多出来的是约束面，尤其是对 AI：\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e传统审批\u003c/th\u003e\n\u003cth\u003eAIP / Infini\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e提交物\u003c/td\u003e\n\u003ctd\u003e表单 / 流程实例\u003c/td\u003e\n\u003ctd\u003e本体上声明的 \u003cstrong\u003eActionType\u003c/strong\u003e（强类型参数）\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e写库\u003c/td\u003e\n\u003ctd\u003e流程节点里跑业务代码 / SQL\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e只能\u003c/strong\u003e执行已注册 Action\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAI 通道\u003c/td\u003e\n\u003ctd\u003e常另开接口直写，与人走两套路\u003c/td\u003e\n\u003ctd\u003e\u003cstrong\u003e人和 Agent 写库都走 Action\u003c/strong\u003e\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e读侧\u003c/td\u003e\n\u003ctd\u003e多在提交后卡权限\u003c/td\u003e\n\u003ctd\u003e提交前 Agent 只能看见授权 Objects\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e一句话：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e传统也能做人审。\u003c/li\u003e\n\u003cli\u003eAIP 把「可写什么」收成 Ontology 上的 Action；LLM \u003cstrong\u003e只能提议这些 Action\u003c/strong\u003e；读写落在同一套对象语义和权限里。\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e若去掉 Agent、只留人工「提议 Action → 批准」，外表会像传统审批；\u003cstrong\u003e对 AI 的统一写网关与机读能力目录\u003c/strong\u003e才是差异点。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e四、点击「运行 Agent」打了哪些接口？\u003c/h2\u003e\n\u003cp\u003e前端会连续调用：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003ePOST /agent/run\u003c/code\u003e\u003c/strong\u003e\u003cbr\u003e\n真正跑 Agent：读对象、提议 Action（写入 pending）。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e\u003ccode\u003eGET /actions?status=pending\u003c/code\u003e\u003c/strong\u003e\u003cbr\u003e\n刷新右侧 HITL 列表。\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e批准写回是另一次操作：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e\u003ccode\u003ePOST /actions/{id}/approve\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e不是「运行 Agent」本身自动改库。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e五、「读对象、提议 Action、pending」分别是什么？\u003c/h2\u003e\n\u003ch3\u003e读哪个对象？\u003c/h3\u003e\n\u003cp\u003e以「将工单 t_100 标记为已解决」为例（heuristic）：\u003c/p\u003e\n\u003col\u003e\n\u003cli\u003e读 Ontology schema（有哪些 Object / Action）\u003c/li\u003e\n\u003cli\u003e读业务对象 \u003cstrong\u003e\u003ccode\u003eTicket\u003c/code\u003e / \u003ccode\u003et_100\u003c/code\u003e\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e\u003ccode\u003esubmit_action(update_ticket_status, …)\u003c/code\u003e\u003c/li\u003e\n\u003c/ol\u003e\n\u003cp\u003e受 Casbin 约束：例如 alice 只能看到 \u003ccode\u003ec_001\u003c/code\u003e 相关对象。\u003cbr\u003e\nDemo 里 ObjectType 目前主要是 \u003ccode\u003eTicket\u003c/code\u003e、\u003ccode\u003eCustomer\u003c/code\u003e。\u003c/p\u003e\n\u003ch3\u003e提议是临时的吗？\u003c/h3\u003e\n\u003cp\u003e\u003cstrong\u003e不是纯内存临时变量\u003c/strong\u003e，而是落库的 Action 记录（表 \u003ccode\u003eontology_actions\u003c/code\u003e）：\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e状态先为 \u003ccode\u003epending\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e有稳定 \u003ccode\u003eid\u003c/code\u003e（UUID）\u003c/li\u003e\n\u003cli\u003e批准后才改业务 Object；拒绝则对象不变\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e「临时」指的是 \u003cstrong\u003e还没写业务对象\u003c/strong\u003e，不是请求结束就丢。\u003c/p\u003e\n\u003ch3\u003e入职入库 / 离职出库可以吗？\u003c/h3\u003e\n\u003cp\u003e可以，同一套模式。工单只是 demo，换成人事即：\u003c/p\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003eObjectType: Employee\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eActionType: onboard_employee   → 入库\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eActionType: offboard_employee  → 出库\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cp\u003e闭环不变：读对象 → 提议 Action（pending）→ 人批 → 写回。\u003cbr\u003e\n前提：先在本体登记 ActionType、定好参数与权限，并实现 approve 后的执行器。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e六、和「以前一个功能写一个 API」的差别\u003c/h2\u003e\n\u003cp\u003e不完全是「以前给人，现在给 Agent」。\u003c/p\u003e\n\u003ch3\u003e以前\u003c/h3\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003ePOST /tickets/{id}/resolve\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003ePOST /employees/onboard\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e…\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cp\u003e每个接口各自校验、权限、写库；前端 / 脚本 / Agent 各自对接不同 URL。\u003c/p\u003e\n\u003ch3\u003e现在\u003c/h3\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003eOntology 登记 Object / Action\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e统一写入口：POST /actions（或工具 submit_action）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e能力目录：GET /ontology/agent-context\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e\u003c/th\u003e\n\u003cth\u003e散装 API\u003c/th\u003e\n\u003cth\u003eOntology / Action\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e能力发现\u003c/td\u003e\n\u003ctd\u003e靠文档 / Prompt\u003c/td\u003e\n\u003ctd\u003e\u003ccode\u003eagent-context\u003c/code\u003e 机读\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e写入口\u003c/td\u003e\n\u003ctd\u003e每功能一个 endpoint\u003c/td\u003e\n\u003ctd\u003e统一 Action 网关\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e服务对象\u003c/td\u003e\n\u003ctd\u003e人、Agent 常两套\u003c/td\u003e\n\u003ctd\u003e人与 Agent 共用语义\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e\u003cstrong\u003e本质\u003c/strong\u003e：给业务能力建「机读目录 + 统一写网关」，而不是简单把 API 的调用方从人换成 Agent。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e七、传统 API 仍适用的场景（Ontology / Action 不是银弹）\u003c/h2\u003e\n\u003cp\u003eOntology + Action 适合「业务语义强、要给 Agent 安全动手、要统一审计/审批」的路径。\u003cbr\u003e\n它\u003cstrong\u003e不能、也不该\u003c/strong\u003e取代所有接口。下面这些场景，继续用（或优先用）普通 API 更合适：\u003c/p\u003e\n\u003ch3\u003e更适合散装 / 专用 API 的情况\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e场景\u003c/th\u003e\n\u003cth\u003e原因\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e高 QPS、低延迟读写\u003c/td\u003e\n\u003ctd\u003e列表分页、搜索、实时推送；走 Action + HITL 过重\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e简单 CRUD / 管理后台\u003c/td\u003e\n\u003ctd\u003e字段编辑、配置页；人为主、无 Agent 参与时，直接 API 更清晰\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e文件上传、流式、WebSocket\u003c/td\u003e\n\u003ctd\u003e传输形态特殊，不适合塞进 Action payload\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e登录、OAuth、Webhook 回调\u003c/td\u003e\n\u003ctd\u003e协议型接口，不是「业务对象动作」\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e批量 ETL / 数仓管道\u003c/td\u003e\n\u003ctd\u003eAirbyte、dbt、作业调度；属于数据层，不是 Agent 写回\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e跨系统集成（对方只认固定 REST）\u003c/td\u003e\n\u003ctd\u003e对外契约已定；可对内再接到 Action execute\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e健康检查、指标、内部运维\u003c/td\u003e\n\u003ctd\u003e\u003ccode\u003e/health\u003c/code\u003e、metrics；与业务 Ontology 无关\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003e更适合 Ontology / Action 的情况\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e场景\u003c/th\u003e\n\u003cth\u003e原因\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eAgent 要读懂业务并提议变更\u003c/td\u003e\n\u003ctd\u003e需要机读的 Object / Action 目录\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e写操作风险高、要人审\u003c/td\u003e\n\u003ctd\u003e入职、调岗、关停资源、改关键状态等\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e多端（人 + Agent + 将来其它客户端）共用写语义\u003c/td\u003e\n\u003ctd\u003e避免每人一套写接口\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e要按对象做细粒度授权\u003c/td\u003e\n\u003ctd\u003eCasbin 挂在 Object / Action 上更自然\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003e共存方式（推荐心智）\u003c/h3\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003e对外 / 专用 API          Ontology 读 + Action 写\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e（集成、CRUD、上传…）  →  （Agent、高风险业务变更）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e         ↘                    ↙\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e           同一套 domain service\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e不是\u003c/strong\u003e「所有功能都登记成 Action」\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e而是\u003c/strong\u003e「Agent 能动的手、以及要统一治理的写，走 Action；其余该 API 还 API」\u003c/li\u003e\n\u003cli\u003eAction 的 \u003ccode\u003eexecute\u003c/code\u003e 往往 \u003cstrong\u003e调用\u003c/strong\u003e 已有业务服务，而不是把业务逻辑重写一遍\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e若强行把分页查询、文件上传也做成 Action，只会增加延迟和复杂度，收益很小——\u003cstrong\u003e银弹不存在，边界比口号重要\u003c/strong\u003e。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e八、\u003ccode\u003e/ontology/agent-context\u003c/code\u003e 是什么？\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e不是文件，是 HTTP 接口。\u003c/strong\u003e\u003c/p\u003e\n\u003cul\u003e\n\u003cli\u003e地址：\u003ccode\u003eGET http://127.0.0.1:8000/ontology/agent-context\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e路由：\u003ccode\u003esrc/infini_ontology/api.py\u003c/code\u003e → \u003ccode\u003eget_agent_context\u003c/code\u003e\u003c/li\u003e\n\u003cli\u003e数据：\u003ccode\u003eregistry.agent_context()\u003c/code\u003e（\u003ccode\u003eontology/registry.py\u003c/code\u003e）\u003c/li\u003e\n\u003cli\u003e作用：把已注册的 Object / Link / Action（并按 Casbin 过滤可 submit 的 Action）收成 JSON，供 Agent 规划\u003c/li\u003e\n\u003c/ul\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"bash\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"bash\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#F69D50\"\u003ecurl\u003c/span\u003e\u003cspan style=\"color:#6CB6FF\"\u003e -s\u003c/span\u003e\u003cspan style=\"color:#6CB6FF\"\u003e -H\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e 'X-User-Id: alice'\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e http://127.0.0.1:8000/ontology/agent-context\u003c/span\u003e\u003cspan style=\"color:#F47067\"\u003e |\u003c/span\u003e\u003cspan style=\"color:#F69D50\"\u003e jq\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e .\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cp\u003e也可在 \u003ca href=\"http://127.0.0.1:8000/docs\"\u003ehttp://127.0.0.1:8000/docs\u003c/a\u003e 中调试。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e九、「读写面收束到 Ontology/Action」怎么实现？\u003c/h2\u003e\n\u003cp\u003e不是靠 Agent 自觉，而是多层硬约束：\u003c/p\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003eAgent（LLM / heuristic）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   │ 只能调白名单工具\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   ▼\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eget_ontology_schema / list_objects / get_object / follow_link / submit_action\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   │\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   ▼\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eRegistry 校验 + ObjectStore + ActionService + Casbin\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   │\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e   ▼\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e真正改库只在 Action approve → execute\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003col\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e工具白名单\u003c/strong\u003e（\u003ccode\u003eagent/tools.py\u003c/code\u003e）\u003cbr\u003e\n无 SQL、无任意 PATCH；LLM 只能 \u003ccode\u003ebind_tools\u003c/code\u003e 上述工具。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e读路径\u003c/strong\u003e\u003cbr\u003e\n必须是已注册 ObjectType；实例再过 Casbin 过滤。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003e写路径\u003c/strong\u003e\u003cbr\u003e\n只能 \u003ccode\u003esubmit_action\u003c/code\u003e → \u003ccode\u003eregistry.get_action\u003c/code\u003e（未登记即失败）→ 参数校验 → Casbin submit → 通常只写 pending；改库要 approve。\u003c/p\u003e\n\u003c/li\u003e\n\u003cli\u003e\n\u003cp\u003e\u003cstrong\u003ePrompt\u003c/strong\u003e（软约束）\u003cbr\u003e\n强调写必须走 \u003ccode\u003esubmit_action\u003c/code\u003e；硬约束仍是工具层 + 服务层。\u003c/p\u003e\n\u003c/li\u003e\n\u003c/ol\u003e\n\u003chr\u003e\n\u003ch2\u003e十、还要不要写业务接口给 Ontology 用？\u003c/h2\u003e\n\u003cp\u003e\u003cstrong\u003e要有业务逻辑，但不一定再给人/Agent 各暴露一套 REST。\u003c/strong\u003e\u003c/p\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"text\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"text\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan\u003e业务逻辑（建员工、关账号、改状态…）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e        ↑\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eOntology / Action（登记 + 校验 + 权限 + HITL）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003e        ↑\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan\u003eAgent / 前端（读 Object + submit_action）\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cul\u003e\n\u003cli\u003eOntology：契约与入口\u003c/li\u003e\n\u003cli\u003e业务实现：Action \u003ccode\u003eexecute\u003c/code\u003e 时调用的 domain service / 内部 API\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e当前 demo 的业务写在 \u003ccode\u003eActionService._dispatch\u003c/code\u003e 内；生产中更常见是 execute 转调已有服务。\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e要准备\u003c/th\u003e\n\u003cth\u003e不必重复\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003eObjectType / ActionType 登记\u003c/td\u003e\n\u003ctd\u003e给 Agent 一人一个平行业务 URL\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eAction 参数、权限、HITL\u003c/td\u003e\n\u003ctd\u003eAgent 直连旧 CRUD\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eexecute 里的真实业务逻辑\u003c/td\u003e\n\u003ctd\u003e两套完全不同的写路径\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003cp\u003e新功能推荐顺序：\u003cstrong\u003e登记 Action → 实现 executor →（按需）HITL\u003c/strong\u003e，而不是先给 Agent 再开平行 API。\u003c/p\u003e\n\u003chr\u003e\n\u003ch2\u003e十一、本地怎么跑\u003c/h2\u003e\n\u003cfigure data-rehype-pretty-code-figure=\"\"\u003e\u003cpre tabindex=\"0\" data-language=\"bash\" data-theme=\"github-dark-dimmed\"\u003e\u003ccode data-language=\"bash\" data-theme=\"github-dark-dimmed\" style=\"display: grid;\"\u003e\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#768390\"\u003e# API\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#F69D50\"\u003euv\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e sync\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#F69D50\"\u003euv\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e run\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e uvicorn\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e infini_ontology.main:app\u003c/span\u003e\u003cspan style=\"color:#6CB6FF\"\u003e --reload\u003c/span\u003e\u003cspan style=\"color:#6CB6FF\"\u003e --app-dir\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e src\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e \u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#768390\"\u003e# UI（默认 3010，避免占 3000）\u003c/span\u003e\u003c/span\u003e\n\u003cspan data-line=\"\"\u003e\u003cspan style=\"color:#6CB6FF\"\u003ecd\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e frontend\u003c/span\u003e\u003cspan style=\"color:#ADBAC7\"\u003e \u0026#x26;\u0026#x26; \u003c/span\u003e\u003cspan style=\"color:#F69D50\"\u003enpm\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e install\u003c/span\u003e\u003cspan style=\"color:#ADBAC7\"\u003e \u0026#x26;\u0026#x26; \u003c/span\u003e\u003cspan style=\"color:#F69D50\"\u003enpm\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e run\u003c/span\u003e\u003cspan style=\"color:#96D0FF\"\u003e dev\u003c/span\u003e\u003c/span\u003e\u003c/code\u003e\u003c/pre\u003e\u003c/figure\u003e\n\u003cul\u003e\n\u003cli\u003eAPI 文档：\u003ca href=\"http://127.0.0.1:8000/docs\"\u003ehttp://127.0.0.1:8000/docs\u003c/a\u003e\u003c/li\u003e\n\u003cli\u003e控制台：\u003ca href=\"http://localhost:3010\"\u003ehttp://localhost:3010\u003c/a\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003cp\u003e演示用户（\u003ccode\u003eX-User-Id\u003c/code\u003e）：\u003c/p\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e用户\u003c/th\u003e\n\u003cth\u003e能力\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003ealice\u003c/td\u003e\n\u003ctd\u003e仅 Acme（c_001）相关对象；可提议 Action；不能批准\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ebob\u003c/td\u003e\n\u003ctd\u003e仅 Beta（c_002）；只读\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003ecarol\u003c/td\u003e\n\u003ctd\u003e可 approve / reject\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003eadmin\u003c/td\u003e\n\u003ctd\u003e全权限\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003chr\u003e\n\u003ch2\u003e十二、一句话收束\u003c/h2\u003e\n\u003cp\u003eInfini 这套东西的关键，不是「多一个审批按钮」或「API 改给 Agent 用」，也不是取代所有接口，而是：\u003c/p\u003e\n\u003cp\u003e\u003cstrong\u003e用 Ontology 定义业务对象与可执行动作；对 Agent 和高风险写，用统一 Action 网关 + 权限 + HITL 收束；其余高流量 CRUD、协议型、管道型接口继续用普通 API，两者共用底层业务服务。\u003c/strong\u003e\u003c/p\u003e"])</script><script>self.__next_f.push([1,"9:[\"$\",\"div\",null,{\"className\":\"mx-auto grid max-w-6xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[240px_1fr]\",\"children\":[[\"$\",\"$L14\",null,{\"items\":[{\"slug\":\"ai\",\"title\":\"AI\",\"posts\":[{\"slug\":\"ai/本体论应用场景\",\"title\":\"本体论和本体建模：具体应用场景究竟是什么？\"},{\"slug\":\"ai/ontology-driven-agent\",\"title\":\"从人月聊IT到 Ontology-driven Agent：可落地的本体平台路线\"},{\"slug\":\"ai/piwechat\",\"title\":\"Pi 微信机器人\"},{\"slug\":\"ai/aip\",\"title\":\"Infini Ontology：AIP 闭环要点总结\"},{\"slug\":\"ai/ollama_qwen_deploy_guide\",\"title\":\"Ollama + Qwen 部署\"},{\"slug\":\"ai/编程新架构\",\"title\":\"业务与 AI 协作架构图汇总\"},{\"slug\":\"ai/taskmaster\",\"title\":\"taskmaster\"},{\"slug\":\"ai/llama-factory\",\"title\":\"llama-factory 部署\"},{\"slug\":\"ai/openclaw\",\"title\":\"openclaw 连飞书\"}]},{\"slug\":\"工程化\",\"title\":\"工程化\",\"posts\":[{\"slug\":\"基础建设/backend\",\"title\":\"后端架构全景解析\"},{\"slug\":\"基础建设/project_design\",\"title\":\"如何一个人独自负责完整的后端项目\"},{\"slug\":\"基础建设/数据库与金融数据工具\",\"title\":\"数据库与金融数据工具\"},{\"slug\":\"基础建设/passkey_complete\",\"title\":\"passkey\"},{\"slug\":\"基础建设/passkey\",\"title\":\"passkey 登录\"},{\"slug\":\"基础建设/3\",\"title\":\"gitflow\"},{\"slug\":\"代码/crypt\",\"title\":\"RSA 加密\"},{\"slug\":\"代码/signature\",\"title\":\"数字签名\"},{\"slug\":\"基础建设/1\",\"title\":\"verdaccio 私有仓库\"},{\"slug\":\"基础建设/2\",\"title\":\"vue + vscode 断点调试\"}]},{\"slug\":\"运维\",\"title\":\"运维\",\"posts\":[{\"slug\":\"linux/7\",\"title\":\"fnm 离线安装\"},{\"slug\":\"linux/6\",\"title\":\"pm2 常用命令\"},{\"slug\":\"linux/1\",\"title\":\"常用命令 1\"},{\"slug\":\"linux/2\",\"title\":\"常用命令 2\"},{\"slug\":\"docker/4\",\"title\":\"镜像源配置\"},{\"slug\":\"linux/3\",\"title\":\"常用命令 3\"},{\"slug\":\"nginx/5\",\"title\":\"自签名证书\"},{\"slug\":\"nginx/3\",\"title\":\"作用\"},{\"slug\":\"nginx/4\",\"title\":\"应用场景\"},{\"slug\":\"nginx/6\",\"title\":\"Windows 脚本\"},{\"slug\":\"linux/4\",\"title\":\"systemd\"},{\"slug\":\"linux/5\",\"title\":\"软件包管理\"},{\"slug\":\"nginx/1\",\"title\":\"一次编译\"},{\"slug\":\"nginx/2\",\"title\":\"上传文件\"},{\"slug\":\"docker/1\",\"title\":\"镜像 / 容器\"},{\"slug\":\"docker/2\",\"title\":\"数据卷 / 网络\"},{\"slug\":\"docker/3\",\"title\":\"Dockerfile\"}]},{\"slug\":\"工具与排障\",\"title\":\"工具与排障\",\"posts\":[{\"slug\":\"问题解决/v2rayN\",\"title\":\"v2rayN 指南\"},{\"slug\":\"问题解决/pr\",\"title\":\"从 Fork 向上游开 PR\"},{\"slug\":\"问题解决/go\",\"title\":\"WSL 安装 Go\"},{\"slug\":\"问题解决/1\",\"title\":\"GitHub 连接问题\"},{\"slug\":\"有用的工具/1\",\"title\":\"常用链接\"}]},{\"slug\":\"项目与副业\",\"title\":\"项目与副业\",\"posts\":[{\"slug\":\"关于副业/stripe-supabase-key\",\"title\":\"Stripe / Supabase\"},{\"slug\":\"项目总结/pkgcli\",\"title\":\"pkgcli 以及相关模板开发\"},{\"slug\":\"项目总结/request\",\"title\":\"request\"},{\"slug\":\"项目总结/ruoyi\",\"title\":\"ruoyi项目总结\"},{\"slug\":\"关于副业/工具\",\"title\":\"副业工具\"},{\"slug\":\"关于副业/技术\",\"title\":\"副业技术\"},{\"slug\":\"关于副业/idea\",\"title\":\"副业idea\"},{\"slug\":\"项目总结/nextjs\",\"title\":\"Next.js 项目\"},{\"slug\":\"项目总结/media\",\"title\":\"音视频相关功能开发\"},{\"slug\":\"项目总结/monitor\",\"title\":\"前端监控\"},{\"slug\":\"项目总结/monorepo\",\"title\":\"monorepo 总结\"},{\"slug\":\"项目总结/list\",\"title\":\"项目汇总\"},{\"slug\":\"项目总结/rtsp\",\"title\":\"rtsp项目总结\"},{\"slug\":\"项目总结/regist\",\"title\":\"Windows 自定义协议\"}]}]}],[\"$\",\"article\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-xs font-semibold uppercase tracking-[0.2em] text-teal\",\"children\":\"AI\"}],[\"$\",\"h1\",null,{\"className\":\"mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl\",\"children\":\"Infini Ontology：AIP 闭环要点总结\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-sm text-ink-soft\",\"children\":[\"jimmy\",\" · 2026-8-21\"]}],[\"$\",\"div\",null,{\"className\":\"prose-note mt-10\",\"dangerouslySetInnerHTML\":{\"__html\":\"$15\"}}],\"$L16\"]}]]}]\n"])</script><script>self.__next_f.push([1,"16:[\"$\",\"nav\",null,{\"className\":\"mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2\",\"children\":[[\"$\",\"$L3\",null,{\"href\":\"/notes/ai/piwechat/\",\"className\":\"group block\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-xs uppercase tracking-[0.16em] text-ink-soft\",\"children\":\"上一篇\"}],[\"$\",\"p\",null,{\"className\":\"mt-1 font-medium text-ink group-hover:text-teal\",\"children\":\"Pi 微信机器人\"}]]}],[\"$\",\"$L3\",null,{\"href\":\"/notes/ai/ollama_qwen_deploy_guide/\",\"className\":\"group block text-right sm:justify-self-end\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-xs uppercase tracking-[0.16em] text-ink-soft\",\"children\":\"下一篇\"}],[\"$\",\"p\",null,{\"className\":\"mt-1 font-medium text-ink group-hover:text-teal\",\"children\":\"Ollama + Qwen 部署\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"f:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"Infini Ontology：AIP 闭环要点总结 · 前端小小栈\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"本文整理自项目讨论，说明开源版 AIP（Artificial Intelligence Platform）闭环在做什么、和传统系统差在哪、以及当前实现如何把 Agent 的读写面收束到 Ontology / Action。 目标不是复刻绚丽\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"12:\"$d:metadata\"\n"])</script></body></html>

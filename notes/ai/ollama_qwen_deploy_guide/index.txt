@@ -1,0 +1,358 @@
+1:"$Sreact.fragment"
+2:I[7639,["726","static/chunks/726-0d5fee421ca0697c.js","177","static/chunks/app/layout-3fc013c111ef7a83.js"],"ParticleField"]
+3:I[9726,["726","static/chunks/726-0d5fee421ca0697c.js","568","static/chunks/app/notes/page-88af5645832fc40b.js"],""]
+4:I[4622,["726","static/chunks/726-0d5fee421ca0697c.js","177","static/chunks/app/layout-3fc013c111ef7a83.js"],"ThemeToggle"]
+5:I[1316,["726","static/chunks/726-0d5fee421ca0697c.js","177","static/chunks/app/layout-3fc013c111ef7a83.js"],"MarketStrip"]
+6:I[3559,[],""]
+7:I[4795,[],""]
+8:I[8935,["726","static/chunks/726-0d5fee421ca0697c.js","177","static/chunks/app/layout-3fc013c111ef7a83.js"],"CornerNika"]
+a:I[9902,[],"OutletBoundary"]
+c:I[5347,[],"AsyncMetadataOutlet"]
+e:I[9902,[],"ViewportBoundary"]
+10:I[9902,[],"MetadataBoundary"]
+11:"$Sreact.suspense"
+13:I[8557,[],""]
+:HL["/wssf/next/static/css/569ebd99b263297b.css","style"]
+0:{"P":null,"b":"Hh14vrHlftfZpLAKioeJ1","p":"/wssf","c":["","notes","ai","ollama_qwen_deploy_guide",""],"i":false,"f":[[["",{"children":["notes",{"children":[["slug","ai/ollama_qwen_deploy_guide","c"],{"children":["__PAGE__",{}]}]}]},"$undefined","$undefined",true],["",["$","$1","c",{"children":[[["$","link","0",{"rel":"stylesheet","href":"/wssf/next/static/css/569ebd99b263297b.css","precedence":"next","crossOrigin":"$undefined","nonce":"$undefined"}]],["$","html",null,{"lang":"zh-CN","suppressHydrationWarning":true,"children":[["$","head",null,{"children":[["$","script",null,{"dangerouslySetInnerHTML":{"__html":"(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})();"}}],["$","link",null,{"rel":"preconnect","href":"https://fonts.googleapis.com"}],["$","link",null,{"rel":"preconnect","href":"https://fonts.gstatic.com","crossOrigin":""}],["$","link",null,{"href":"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&family=Manrope:wght@400;500;600;700&family=Syne:wght@500;600;700;800&display=swap","rel":"stylesheet"}]]}],["$","body",null,{"className":"relative","children":[["$","$L2",null,{}],["$","div",null,{"className":"grain","aria-hidden":true}],["$","div",null,{"className":"relative z-10","children":[["$","header",null,{"className":"sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md","children":["$","div",null,{"className":"mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8","children":[["$","$L3",null,{"href":"/","className":"group flex items-baseline gap-2","children":[["$","span",null,{"className":"font-display text-2xl tracking-tight text-ink group-hover:text-teal","children":"前端小小栈"}],["$","span",null,{"className":"hidden text-xs uppercase tracking-[0.18em] text-ink-soft sm:inline","children":"notes"}]]}],["$","nav",null,{"className":"flex items-center gap-5 text-sm text-ink-soft","children":[["$","$L3",null,{"href":"/","className":"hover:text-teal","children":"首页"}],["$","$L3",null,{"href":"/notes/","className":"hover:text-teal","children":"全部笔记"}],["$","a",null,{"href":"https://github.com/hezihua","target":"_blank","rel":"noreferrer","className":"hover:text-teal","children":"GitHub"}],["$","$L4",null,{}]]}]]}]}],["$","$L5",null,{}],["$","main",null,{"children":["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":[["$","div",null,{"className":"mx-auto max-w-3xl px-5 py-24 text-center md:px-8","children":[["$","h1",null,{"className":"font-display text-5xl text-ink","children":"404"}],["$","p",null,{"className":"mt-4 text-ink-soft","children":"没有找到这篇文章。"}],["$","$L3",null,{"href":"/","className":"mt-8 inline-block text-teal hover:underline","children":"返回首页"}]]}],[]],"forbidden":"$undefined","unauthorized":"$undefined"}]}],["$","footer",null,{"className":"mt-24 border-t border-line","children":["$","div",null,{"className":"mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:px-8","children":[["$","p",null,{"children":["© ",2026," ","前端小小栈"]}],["$","div",null,{"className":"flex gap-4","children":[["$","a",null,{"href":"https://github.com/hezihua","target":"_blank","rel":"noreferrer","className":"hover:text-teal","children":"GitHub"}],["$","a",null,{"href":"https://juejin.cn/user/1081575170131006","target":"_blank","rel":"noreferrer","className":"hover:text-teal","children":"掘金"}]]}]]}]}]]}],["$","$L8",null,{}]]}]]}]]}],{"children":["notes",["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":[["slug","ai/ollama_qwen_deploy_guide","c"],["$","$1","c",{"children":[null,["$","$L6",null,{"parallelRouterKey":"children","error":"$undefined","errorStyles":"$undefined","errorScripts":"$undefined","template":["$","$L7",null,{}],"templateStyles":"$undefined","templateScripts":"$undefined","notFound":"$undefined","forbidden":"$undefined","unauthorized":"$undefined"}]]}],{"children":["__PAGE__",["$","$1","c",{"children":["$L9",null,["$","$La",null,{"children":["$Lb",["$","$Lc",null,{"promise":"$@d"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],["$","$1","h",{"children":[null,[["$","$Le",null,{"children":"$Lf"}],null],["$","$L10",null,{"children":["$","div",null,{"hidden":true,"children":["$","$11",null,{"fallback":null,"children":"$L12"}]}]}]]}],false]],"m":"$undefined","G":["$13",[]],"s":false,"S":true}
+f:[["$","meta","0",{"charSet":"utf-8"}],["$","meta","1",{"name":"viewport","content":"width=device-width, initial-scale=1"}]]
+b:null
+14:I[9409,["726","static/chunks/726-0d5fee421ca0697c.js","568","static/chunks/app/notes/page-88af5645832fc40b.js"],"Sidebar"]
+15:T4a0e,<h1>Ollama + Qwen 本地部署指南（Docker + GPU 加速）</h1>
+<blockquote>
+<p>适用环境：Windows 11 + WSL2 + Docker Desktop + NVIDIA RTX 4060 Ti（16GB）</p>
+<p>部署时间：约 10~15 分钟（不含模型下载）</p>
+</blockquote>
+<h2>一、前置准备</h2>
+<h3>1.1 确认已安装</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>检查命令</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>Docker Desktop</td>
+<td><code>docker --version</code></td>
+<td>需开启 WSL2 后端</td>
+</tr>
+<tr>
+<td>WSL2</td>
+<td><code>wsl -l -v</code></td>
+<td>确保有 Linux 发行版在运行</td>
+</tr>
+<tr>
+<td>NVIDIA 驱动</td>
+<td><code>nvidia-smi</code></td>
+<td>宿主机需能识别显卡</td>
+</tr>
+<tr>
+<td>NVIDIA Container Toolkit</td>
+<td><code>docker run --rm --gpus all nvidia/cuda:12.0-base nvidia-smi</code></td>
+<td>让 Docker 容器调用 GPU</td>
+</tr>
+</tbody>
+</table>
+<h3>1.2 显存确认</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">nvidia-smi</span></span></code></pre></figure>
+<p>确认显存容量：</p>
+<ul>
+<li><strong>8GB 版：</strong> 建议运行 <code>qwen3:8b</code> 或 <code>qwen3.5:9b</code></li>
+<li><strong>16GB 版：</strong> 可运行 <code>qwen3:14b</code>、<code>qwen3.5:9b</code>，甚至尝试 <code>qwen3:30b-a3b</code>（MoE）</li>
+</ul>
+<h2>二、部署 Ollama 服务</h2>
+<h3>2.1 拉取官方镜像</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> pull</span><span style="color:#96D0FF"> ollama/ollama</span></span></code></pre></figure>
+<p>镜像大小约 <strong>8~9GB</strong>。</p>
+<h3>2.2 启动容器（GPU 模式）</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> run</span><span style="color:#6CB6FF"> -d</span><span style="color:#6CB6FF"> --name</span><span style="color:#96D0FF"> ollama</span><span style="color:#6CB6FF"> --gpus</span><span style="color:#96D0FF"> all</span><span style="color:#6CB6FF"> -p</span><span style="color:#96D0FF"> 11434:11434</span><span style="color:#6CB6FF"> -v</span><span style="color:#96D0FF"> ollama-data:/root/.ollama</span><span style="color:#96D0FF"> ollama/ollama</span></span></code></pre></figure>
+<p>参数说明：</p>
+<table>
+<thead>
+<tr>
+<th>参数</th>
+<th>含义</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>-d</code></td>
+<td>后台运行</td>
+</tr>
+<tr>
+<td><code>--name ollama</code></td>
+<td>容器名称</td>
+</tr>
+<tr>
+<td><code>--gpus all</code></td>
+<td>允许容器使用所有 GPU</td>
+</tr>
+<tr>
+<td><code>-p 11434:11434</code></td>
+<td>映射 API 端口</td>
+</tr>
+<tr>
+<td><code>-v ollama-data:/root/.ollama</code></td>
+<td>命名卷持久化模型数据</td>
+</tr>
+</tbody>
+</table>
+<p><strong>注意：</strong> 如果报错 <code>could not select device driver</code>，说明 NVIDIA Container Toolkit 未安装，需先安装或去掉 <code>--gpus all</code> 用 CPU 模式运行。</p>
+<h3>2.3 验证容器状态</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> ps</span></span></code></pre></figure>
+<p>应看到 <code>ollama</code> 容器在运行。</p>
+<h2>三、拉取千问（Qwen）模型</h2>
+<h3>3.1 选择适合显存的模型</h3>
+<table>
+<thead>
+<tr>
+<th>模型</th>
+<th>参数量</th>
+<th>推荐显存</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>qwen3:8b</code></td>
+<td>80 亿</td>
+<td>8GB+</td>
+<td>日常对话、通用任务</td>
+</tr>
+<tr>
+<td><code>qwen3.5:9b</code></td>
+<td>90 亿</td>
+<td>8GB+</td>
+<td>更强的推理能力</td>
+</tr>
+<tr>
+<td><code>qwen3:14b</code></td>
+<td>140 亿</td>
+<td>12GB+</td>
+<td>更精准的回答</td>
+</tr>
+<tr>
+<td><code>qwen3-coder:14b</code></td>
+<td>140 亿</td>
+<td>12GB+</td>
+<td>代码生成专用</td>
+</tr>
+<tr>
+<td><code>qwen3:30b-a3b</code></td>
+<td>300 亿（MoE）</td>
+<td>16GB+</td>
+<td>大参数，每 token 只激活 3B</td>
+</tr>
+</tbody>
+</table>
+<h3>3.2 执行拉取</h3>
+<p>以 <strong>Qwen3.5 9B</strong> 为例：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> exec</span><span style="color:#6CB6FF"> -it</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> pull</span><span style="color:#96D0FF"> qwen3.5:9b</span></span></code></pre></figure>
+<p>模型大小约 <strong>6~7GB</strong>，下载时间取决于网络速度。</p>
+<h3>3.3 查看已下载模型</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> exec</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> list</span></span></code></pre></figure>
+<h2>四、验证 GPU 加速</h2>
+<h3>4.1 检查显存占用</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> exec</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> nvidia-smi</span></span></code></pre></figure>
+<p>期望输出：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>+---------------------------------------------------------------------------------------+</span></span>
+<span data-line=""><span>| NVIDIA-SMI 560.35.02              Driver Version: 560.94       CUDA Version: 12.6     |</span></span>
+<span data-line=""><span>|-----------------------------------------+----------------------+----------------------+</span></span>
+<span data-line=""><span>| GPU  Name                  Memory-Usage | GPU-Util  Compute M. |</span></span>
+<span data-line=""><span>|   0  NVIDIA GeForce RTX 4060 Ti      7657MiB / 16380MiB      0%   Default            |</span></span>
+<span data-line=""><span>+---------------------------------------------------------------------------------------+</span></span>
+<span data-line=""><span>| Processes:                                                                            |</span></span>
+<span data-line=""><span>|  GPU   GI   CI        PID   Type   Process name                            GPU Memory |</span></span>
+<span data-line=""><span>|        ID   ID                                                             Usage      |</span></span>
+<span data-line=""><span>|=======================================================================================|</span></span>
+<span data-line=""><span>|    0   N/A  N/A       168      C   /llama-server                                N/A    |</span></span>
+<span data-line=""><span>+---------------------------------------------------------------------------------------+</span></span></code></pre></figure>
+<p>关键指标：</p>
+<ul>
+<li><code>Memory-Usage</code> 有数值（模型已加载进显存）</li>
+<li><code>Process name</code> 中出现 <code>/llama-server</code></li>
+</ul>
+<h3>4.2 命令行对话测试</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> exec</span><span style="color:#6CB6FF"> -it</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> ollama</span><span style="color:#96D0FF"> run</span><span style="color:#96D0FF"> qwen3.5:9b</span></span></code></pre></figure>
+<p>出现 <code>>>></code> 提示符后输入：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>>>> 你好</span></span></code></pre></figure>
+<p><strong>正常响应</strong> = 模型加载成功且 GPU 生效。</p>
+<p>速度参考（4060 Ti）：</p>
+<ul>
+<li>GPU 模式：20~50 tokens/秒</li>
+<li>CPU 模式：2~5 tokens/秒（明显卡顿）</li>
+</ul>
+<h2>五、部署 Open WebUI（可选）</h2>
+<p>命令行交互不够方便，可部署网页版界面。</p>
+<h3>5.1 启动 Open WebUI 容器</h3>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> run</span><span style="color:#6CB6FF"> -d</span><span style="color:#6CB6FF"> -p</span><span style="color:#96D0FF"> 3000:8080</span><span style="color:#6CB6FF"> --add-host=host.docker.internal:host-gateway</span><span style="color:#6CB6FF"> -v</span><span style="color:#96D0FF"> open-webui:/app/backend/data</span><span style="color:#6CB6FF"> --name</span><span style="color:#96D0FF"> open-webui</span><span style="color:#6CB6FF"> --restart</span><span style="color:#96D0FF"> always</span><span style="color:#96D0FF"> ghcr.io/open-webui/open-webui:main</span></span></code></pre></figure>
+<p>镜像大小约 <strong>3~4GB</strong>。</p>
+<h3>5.2 访问界面</h3>
+<p>浏览器打开：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="text" data-theme="github-dark-dimmed"><code data-language="text" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span>http://localhost:3000</span></span></code></pre></figure>
+<p>首次使用需注册账号，然后即可在网页中选择模型、进行对话、上传文件等。</p>
+<h3>5.3 Open WebUI 功能</h3>
+<ul>
+<li>类似 ChatGPT 的聊天界面</li>
+<li>一键切换本地模型</li>
+<li>对话历史保存</li>
+<li>文件上传与知识库（RAG）</li>
+<li>多用户支持</li>
+</ul>
+<h2>六、Docker Compose 一键编排（推荐）</h2>
+<p>将 Ollama + Open WebUI 写为 <code>docker-compose.yml</code>：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="yaml" data-theme="github-dark-dimmed"><code data-language="yaml" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#8DDB8C">version</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">'3.8'</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="color:#8DDB8C">services</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">  ollama</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">    image</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">ollama/ollama</span></span>
+<span data-line=""><span style="color:#8DDB8C">    container_name</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">ollama</span></span>
+<span data-line=""><span style="color:#8DDB8C">    ports</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">"11434:11434"</span></span>
+<span data-line=""><span style="color:#8DDB8C">    volumes</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">ollama-data:/root/.ollama</span></span>
+<span data-line=""><span style="color:#768390">    # 有 NVIDIA GPU 时启用：</span></span>
+<span data-line=""><span style="color:#8DDB8C">    runtime</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">nvidia</span></span>
+<span data-line=""><span style="color:#8DDB8C">    deploy</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">      resources</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">        reservations</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">          devices</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">            - </span><span style="color:#8DDB8C">driver</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">nvidia</span></span>
+<span data-line=""><span style="color:#8DDB8C">              count</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">all</span></span>
+<span data-line=""><span style="color:#8DDB8C">              capabilities</span><span style="color:#ADBAC7">: [</span><span style="color:#96D0FF">gpu</span><span style="color:#ADBAC7">]</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="color:#8DDB8C">  open-webui</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">    image</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">ghcr.io/open-webui/open-webui:main</span></span>
+<span data-line=""><span style="color:#8DDB8C">    container_name</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">open-webui</span></span>
+<span data-line=""><span style="color:#8DDB8C">    ports</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">"3000:8080"</span></span>
+<span data-line=""><span style="color:#8DDB8C">    environment</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">OLLAMA_BASE_URL=http://ollama:11434</span></span>
+<span data-line=""><span style="color:#8DDB8C">    volumes</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">open-webui-data:/app/backend/data</span></span>
+<span data-line=""><span style="color:#8DDB8C">    depends_on</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#ADBAC7">      - </span><span style="color:#96D0FF">ollama</span></span>
+<span data-line=""><span style="color:#8DDB8C">    restart</span><span style="color:#ADBAC7">: </span><span style="color:#96D0FF">always</span></span>
+<span data-line=""> </span>
+<span data-line=""><span style="color:#8DDB8C">volumes</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">  ollama-data</span><span style="color:#ADBAC7">:</span></span>
+<span data-line=""><span style="color:#8DDB8C">  open-webui-data</span><span style="color:#ADBAC7">:</span></span></code></pre></figure>
+<p>启动：</p>
+<figure data-rehype-pretty-code-figure=""><pre tabindex="0" data-language="bash" data-theme="github-dark-dimmed"><code data-language="bash" data-theme="github-dark-dimmed" style="display: grid;"><span data-line=""><span style="color:#F69D50">docker</span><span style="color:#96D0FF"> compose</span><span style="color:#96D0FF"> up</span><span style="color:#6CB6FF"> -d</span></span></code></pre></figure>
+<h2>七、常用命令速查</h2>
+<table>
+<thead>
+<tr>
+<th>操作</th>
+<th>命令</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>查看运行中的容器</td>
+<td><code>docker ps</code></td>
+</tr>
+<tr>
+<td>查看 Ollama 日志</td>
+<td><code>docker logs ollama</code></td>
+</tr>
+<tr>
+<td>查看已下载模型</td>
+<td><code>docker exec ollama ollama list</code></td>
+</tr>
+<tr>
+<td>删除某个模型</td>
+<td><code>docker exec ollama ollama rm qwen3.5:9b</code></td>
+</tr>
+<tr>
+<td>停止 Ollama</td>
+<td><code>docker stop ollama</code></td>
+</tr>
+<tr>
+<td>启动 Ollama</td>
+<td><code>docker start ollama</code></td>
+</tr>
+<tr>
+<td>删除容器（保留数据卷）</td>
+<td><code>docker rm ollama</code></td>
+</tr>
+<tr>
+<td>进入容器内部</td>
+<td><code>docker exec -it ollama /bin/bash</code></td>
+</tr>
+<tr>
+<td>查看 GPU 状态</td>
+<td><code>docker exec ollama nvidia-smi</code></td>
+</tr>
+</tbody>
+</table>
+<h2>八、常见问题</h2>
+<p><strong>Q1：模型下载很慢怎么办？</strong></p>
+<ul>
+<li>检查网络连接</li>
+<li>或配置 Docker 镜像加速器（如阿里云、中科大镜像源）</li>
+</ul>
+<p><strong>Q2：容器重启后模型不见了？</strong></p>
+<ul>
+<li>确认启动时使用了 <code>-v ollama-data:/root/.ollama</code> 数据卷挂载</li>
+<li>如果没用卷，模型只存在于容器内部，删除容器即丢失</li>
+</ul>
+<p><strong>Q3：GPU 没生效，模型在 CPU 上跑？</strong></p>
+<ul>
+<li>宿主机 <code>nvidia-smi</code> 是否正常输出</li>
+<li>NVIDIA Container Toolkit 是否安装</li>
+<li>Docker Desktop 设置中是否启用了 WSL2 集成</li>
+</ul>
+<p><strong>Q4：想让局域网其他设备访问？</strong></p>
+<ul>
+<li>将端口映射改为 <code>-p 0.0.0.0:11434:11434</code></li>
+<li>并确保防火墙放行</li>
+</ul>
+<p><strong>Q5：Qwen3.5 输出很长的 Thinking Process 怎么关？</strong></p>
+<ul>
+<li>在对话中输入 <code>/set parameter no_think true</code></li>
+<li>或重启容器时加环境变量 <code>-e OLLAMA_NO_THINK=true</code></li>
+</ul>
+<h2>九、总结</h2>
+<table>
+<thead>
+<tr>
+<th>步骤</th>
+<th>耗时</th>
+<th>状态</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>拉取 Ollama 镜像</td>
+<td>~5 分钟</td>
+<td>✅ 必需</td>
+</tr>
+<tr>
+<td>启动 Ollama 容器</td>
+<td>&#x3C; 1 分钟</td>
+<td>✅ 必需</td>
+</tr>
+<tr>
+<td>拉取 Qwen 模型</td>
+<td>~5-10 分钟</td>
+<td>✅ 必需</td>
+</tr>
+<tr>
+<td>验证 GPU 加速</td>
+<td>&#x3C; 1 分钟</td>
+<td>✅ 推荐</td>
+</tr>
+<tr>
+<td>部署 Open WebUI</td>
+<td>~10 分钟</td>
+<td>⚪ 可选</td>
+</tr>
+</tbody>
+</table>
+<p>至此，你已在本地拥有一套完整的 <strong>大模型推理环境</strong>，所有数据保存在本地，无需联网即可对话。</p>9:["$","div",null,{"className":"mx-auto grid max-w-6xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[240px_1fr]","children":[["$","$L14",null,{"items":[{"slug":"ai","title":"AI","posts":[{"slug":"ai/本体论应用场景","title":"本体论和本体建模：具体应用场景究竟是什么？"},{"slug":"ai/ontology-driven-agent","title":"从人月聊IT到 Ontology-driven Agent：可落地的本体平台路线"},{"slug":"ai/piwechat","title":"Pi 微信机器人"},{"slug":"ai/aip","title":"Infini Ontology：AIP 闭环要点总结"},{"slug":"ai/ollama_qwen_deploy_guide","title":"Ollama + Qwen 部署"},{"slug":"ai/编程新架构","title":"业务与 AI 协作架构图汇总"},{"slug":"ai/taskmaster","title":"taskmaster"},{"slug":"ai/llama-factory","title":"llama-factory 部署"},{"slug":"ai/openclaw","title":"openclaw 连飞书"}]},{"slug":"工程化","title":"工程化","posts":[{"slug":"基础建设/backend","title":"后端架构全景解析"},{"slug":"基础建设/project_design","title":"如何一个人独自负责完整的后端项目"},{"slug":"基础建设/数据库与金融数据工具","title":"数据库与金融数据工具"},{"slug":"基础建设/passkey_complete","title":"passkey"},{"slug":"基础建设/passkey","title":"passkey 登录"},{"slug":"基础建设/3","title":"gitflow"},{"slug":"代码/crypt","title":"RSA 加密"},{"slug":"代码/signature","title":"数字签名"},{"slug":"基础建设/1","title":"verdaccio 私有仓库"},{"slug":"基础建设/2","title":"vue + vscode 断点调试"}]},{"slug":"运维","title":"运维","posts":[{"slug":"linux/7","title":"fnm 离线安装"},{"slug":"linux/6","title":"pm2 常用命令"},{"slug":"linux/1","title":"常用命令 1"},{"slug":"linux/2","title":"常用命令 2"},{"slug":"docker/4","title":"镜像源配置"},{"slug":"linux/3","title":"常用命令 3"},{"slug":"nginx/5","title":"自签名证书"},{"slug":"nginx/3","title":"作用"},{"slug":"nginx/4","title":"应用场景"},{"slug":"nginx/6","title":"Windows 脚本"},{"slug":"linux/4","title":"systemd"},{"slug":"linux/5","title":"软件包管理"},{"slug":"nginx/1","title":"一次编译"},{"slug":"nginx/2","title":"上传文件"},{"slug":"docker/1","title":"镜像 / 容器"},{"slug":"docker/2","title":"数据卷 / 网络"},{"slug":"docker/3","title":"Dockerfile"}]},{"slug":"工具与排障","title":"工具与排障","posts":[{"slug":"问题解决/v2rayN","title":"v2rayN 指南"},{"slug":"问题解决/pr","title":"从 Fork 向上游开 PR"},{"slug":"问题解决/go","title":"WSL 安装 Go"},{"slug":"问题解决/1","title":"GitHub 连接问题"},{"slug":"有用的工具/1","title":"常用链接"}]},{"slug":"项目与副业","title":"项目与副业","posts":[{"slug":"关于副业/stripe-supabase-key","title":"Stripe / Supabase"},{"slug":"项目总结/pkgcli","title":"pkgcli 以及相关模板开发"},{"slug":"项目总结/request","title":"request"},{"slug":"项目总结/ruoyi","title":"ruoyi项目总结"},{"slug":"关于副业/工具","title":"副业工具"},{"slug":"关于副业/技术","title":"副业技术"},{"slug":"关于副业/idea","title":"副业idea"},{"slug":"项目总结/nextjs","title":"Next.js 项目"},{"slug":"项目总结/media","title":"音视频相关功能开发"},{"slug":"项目总结/monitor","title":"前端监控"},{"slug":"项目总结/monorepo","title":"monorepo 总结"},{"slug":"项目总结/list","title":"项目汇总"},{"slug":"项目总结/rtsp","title":"rtsp项目总结"},{"slug":"项目总结/regist","title":"Windows 自定义协议"}]}]}],["$","article",null,{"children":[["$","p",null,{"className":"text-xs font-semibold uppercase tracking-[0.2em] text-teal","children":"AI"}],["$","h1",null,{"className":"mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl","children":"Ollama + Qwen 部署"}],["$","p",null,{"className":"mt-4 text-sm text-ink-soft","children":["jimmy"," · 2026-8-21"]}],["$","div",null,{"className":"prose-note mt-10","dangerouslySetInnerHTML":{"__html":"$15"}}],"$L16"]}]]}]
+16:["$","nav",null,{"className":"mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2","children":[["$","$L3",null,{"href":"/notes/ai/aip/","className":"group block","children":[["$","span",null,{"className":"text-xs uppercase tracking-[0.16em] text-ink-soft","children":"上一篇"}],["$","p",null,{"className":"mt-1 font-medium text-ink group-hover:text-teal","children":"Infini Ontology：AIP 闭环要点总结"}]]}],["$","$L3",null,{"href":"/notes/ai/编程新架构/","className":"group block text-right sm:justify-self-end","children":[["$","span",null,{"className":"text-xs uppercase tracking-[0.16em] text-ink-soft","children":"下一篇"}],["$","p",null,{"className":"mt-1 font-medium text-ink group-hover:text-teal","children":"业务与 AI 协作架构图汇总"}]]}]]}]
+d:{"metadata":[["$","title","0",{"children":"Ollama + Qwen 部署 · 前端小小栈"}],["$","meta","1",{"name":"description","content":"适用环境：Windows 11 + WSL2 + Docker Desktop + NVIDIA RTX 4060 Ti（16GB） 部署时间：约 10~15 分钟（不含模型下载） | 组件 | 检查命令 | 说明 | | | | | | "}]],"error":null,"digest":"$undefined"}
+12:"$d:metadata"

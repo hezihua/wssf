@@ -1,0 +1,237 @@
+<!DOCTYPE html><!--Hh14vrHlftfZpLAKioeJ1--><html lang="zh-CN"><head><meta charSet="utf-8"/><meta name="viewport" content="width=device-width, initial-scale=1"/><link rel="stylesheet" href="/wssf/next/static/css/569ebd99b263297b.css" data-precedence="next"/><link rel="preload" as="script" fetchPriority="low" href="/wssf/next/static/chunks/webpack-b7d03e4103fbbc14.js"/><script src="/wssf/next/static/chunks/67347c79-3721fe9001d4c873.js" async=""></script><script src="/wssf/next/static/chunks/136-68e3faf5d04f11b0.js" async=""></script><script src="/wssf/next/static/chunks/main-app-35ca4e92ed24529d.js" async=""></script><script src="/wssf/next/static/chunks/726-0d5fee421ca0697c.js" async=""></script><script src="/wssf/next/static/chunks/app/layout-3fc013c111ef7a83.js" async=""></script><script src="/wssf/next/static/chunks/app/notes/page-88af5645832fc40b.js" async=""></script><link rel="preconnect" href="https://fonts.googleapis.com"/><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin=""/><title>后端架构全景解析 · 前端小小栈</title><meta name="description" content="Web 、 iOS 、 安卓 、 PC 多端接入 流量来源区分：正常用户 vs Bot（机器人） vs 第三方 调用 攻击清洗 ：防御 DDoS、恶意请求 转发 ：流量分发到后端服务 服务治理 ：统一入口管理 监控 &amp; 统计 ：实时流量、性"/><script>(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'&&window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})();</script><link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500&amp;family=Manrope:wght@400;500;600;700&amp;family=Syne:wght@500;600;700;800&amp;display=swap" rel="stylesheet"/><script src="/wssf/next/static/chunks/polyfills-42372ed130431b0a.js" noModule=""></script></head><body class="relative"><div hidden=""><!--$--><!--/$--></div><canvas class="pointer-events-none fixed inset-0 z-0" aria-hidden="true"></canvas><div class="grain" aria-hidden="true"></div><div class="relative z-10"><header class="sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md"><div class="mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8"><a class="group flex items-baseline gap-2" href="/wssf/"><span class="font-display text-2xl tracking-tight text-ink group-hover:text-teal">前端小小栈</span><span class="hidden text-xs uppercase tracking-[0.18em] text-ink-soft sm:inline">notes</span></a><nav class="flex items-center gap-5 text-sm text-ink-soft"><a class="hover:text-teal" href="/wssf/">首页</a><a class="hover:text-teal" href="/wssf/notes/">全部笔记</a><a href="https://github.com/hezihua" target="_blank" rel="noreferrer" class="hover:text-teal">GitHub</a><button type="button" class="inline-flex h-8 w-8 items-center justify-center border border-line text-ink-soft hover:border-teal hover:text-teal" aria-label="切换到深色主题" title="深色"><span class="opacity-0" aria-hidden="true"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M21 14.5A8.5 8.5 0 0 1 9.5 3 7 7 0 1 0 21 14.5z"></path></svg></span></button></nav></div></header><div class="market-strip w-full border-b border-line/70"><div class="tradingview-widget-container w-full"></div></div><main><div class="mx-auto grid max-w-6xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[240px_1fr]"><button type="button" class="mb-4 inline-flex items-center gap-2 border border-line bg-paper-deep/50 px-3 py-2 text-sm text-ink lg:hidden" aria-expanded="false">展开目录</button><aside class="hidden lg:block lg:sticky lg:top-24 lg:max-h-[calc(100vh-7rem)] lg:overflow-y-auto"><p class="mb-3 text-xs font-semibold uppercase tracking-[0.2em] text-ink-soft">栏目</p><ul class="space-y-4 text-sm"><li><p class="mb-1.5 font-medium text-ink">AI</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/本体论应用场景/">本体论和本体建模：具体应用场景究竟是什么？</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/ontology-driven-agent/">从人月聊IT到 Ontology-driven Agent：可落地的本体平台路线</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/piwechat/">Pi 微信机器人</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/aip/">Infini Ontology：AIP 闭环要点总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/ollama_qwen_deploy_guide/">Ollama + Qwen 部署</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/编程新架构/">业务与 AI 协作架构图汇总</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/taskmaster/">taskmaster</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/llama-factory/">llama-factory 部署</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/ai/openclaw/">openclaw 连飞书</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">工程化</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/backend/">后端架构全景解析</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/project_design/">如何一个人独自负责完整的后端项目</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/数据库与金融数据工具/">数据库与金融数据工具</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/passkey_complete/">passkey</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/passkey/">passkey 登录</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/3/">gitflow</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/代码/crypt/">RSA 加密</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/代码/signature/">数字签名</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/1/">verdaccio 私有仓库</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/基础建设/2/">vue + vscode 断点调试</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">运维</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/7/">fnm 离线安装</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/6/">pm2 常用命令</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/1/">常用命令 1</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/2/">常用命令 2</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/4/">镜像源配置</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/3/">常用命令 3</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/5/">自签名证书</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/3/">作用</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/4/">应用场景</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/6/">Windows 脚本</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/4/">systemd</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/linux/5/">软件包管理</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/1/">一次编译</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/nginx/2/">上传文件</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/1/">镜像 / 容器</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/2/">数据卷 / 网络</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/docker/3/">Dockerfile</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">工具与排障</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/v2rayN/">v2rayN 指南</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/pr/">从 Fork 向上游开 PR</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/go/">WSL 安装 Go</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/问题解决/1/">GitHub 连接问题</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/有用的工具/1/">常用链接</a></li></ul></li><li><p class="mb-1.5 font-medium text-ink">项目与副业</p><ul class="space-y-1 border-l border-line pl-3"><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/stripe-supabase-key/">Stripe / Supabase</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/pkgcli/">pkgcli 以及相关模板开发</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/request/">request</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/ruoyi/">ruoyi项目总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/工具/">副业工具</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/技术/">副业技术</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/关于副业/idea/">副业idea</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/nextjs/">Next.js 项目</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/media/">音视频相关功能开发</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/monitor/">前端监控</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/monorepo/">monorepo 总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/list/">项目汇总</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/rtsp/">rtsp项目总结</a></li><li><a class="text-ink-soft hover:text-teal" href="/wssf/notes/项目总结/regist/">Windows 自定义协议</a></li></ul></li></ul></aside><article><p class="text-xs font-semibold uppercase tracking-[0.2em] text-teal">工程化</p><h1 class="mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl">后端架构全景解析</h1><p class="mt-4 text-sm text-ink-soft">jimmy<!-- --> · 2026-5-21</p><div class="prose-note mt-10"><h2>一、入口层（流量接入与治理）</h2>
+<h3>1.1 客户端入口</h3>
+<ul>
+<li><strong>Web</strong>、<strong>iOS</strong>、<strong>安卓</strong>、<strong>PC</strong> 多端接入</li>
+<li>流量来源区分：正常用户 vs <strong>Bot（机器人）</strong> vs <strong>第三方</strong> 调用</li>
+</ul>
+<h3>1.2 流量平台</h3>
+<ul>
+<li><strong>攻击清洗</strong>：防御 DDoS、恶意请求</li>
+<li><strong>转发</strong>：流量分发到后端服务</li>
+</ul>
+<h3>1.3 网关层（Gateway）</h3>
+<ul>
+<li><strong>服务治理</strong>：统一入口管理</li>
+<li><strong>监控 &#x26; 统计</strong>：实时流量、性能监控</li>
+<li><strong>Cache</strong>：缓存加速，减轻后端压力</li>
+<li>网关作为<strong>单一模块</strong>承接所有入口流量，再路由到后端服务</li>
+</ul>
+<hr>
+<h2>二、资金层（钱）</h2>
+<h3>2.1 支付对账平台</h3>
+<ul>
+<li>处理所有资金往来、交易流水对账</li>
+</ul>
+<h3>2.2 道具/抽奖/履约</h3>
+<ul>
+<li>虚拟道具发放</li>
+<li>抽奖活动逻辑</li>
+<li>订单履约闭环</li>
+</ul>
+<h3>2.3 支付渠道</h3>
+<ul>
+<li><strong>银行</strong>、<strong>微信支付（WX）</strong>、<strong>支付宝</strong></li>
+<li>对接多渠道支付，保障资金通路稳定</li>
+</ul>
+<h3>2.4 To B 商家平台</h3>
+<ul>
+<li>面向商家的资金管理、结算、提现等功能</li>
+<li>需防范 <strong>洗钱、羊毛党</strong> 等风险</li>
+</ul>
+<hr>
+<h2>三、用户层</h2>
+<h3>3.1 内部营销平台</h3>
+<ul>
+<li>用户增长、活动策划、营销推广</li>
+<li>核心目标：<strong>增长 / 获客</strong></li>
+</ul>
+<h3>3.2 审核平台</h3>
+<ul>
+<li>内容/行为审核，保障平台合规</li>
+<li>用户发布的内容、交易行为等都需要过审</li>
+</ul>
+<h3>3.3 用户数据报表</h3>
+<ul>
+<li><strong>BI 展示</strong>：业务数据可视化</li>
+<li>支撑运营决策</li>
+</ul>
+<hr>
+<h2>四、数据层</h2>
+<h3>4.1 数据平台</h3>
+<ul>
+<li>提交 SQL、报表需求</li>
+<li>支撑业务数据查询与分析</li>
+</ul>
+<h3>4.2 安全</h3>
+<ul>
+<li>数据安全策略、权限管控</li>
+<li>敏感数据加密、防泄漏</li>
+</ul>
+<h3>4.3 存储基础设施</h3>
+<table>
+<thead>
+<tr>
+<th>组件</th>
+<th>用途</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>OSS</strong></td>
+<td>对象存储，静态资源（图片、文件等）</td>
+</tr>
+<tr>
+<td><strong>RDS</strong></td>
+<td>关系型数据库，结构化数据存储</td>
+</tr>
+<tr>
+<td><strong>ADB</strong></td>
+<td>分析型数据库，大数据计算</td>
+</tr>
+</tbody>
+</table>
+<h3>4.4 监控要求</h3>
+<blockquote>
+<p>"这些平台都是要监控好的" —— 所有基础设施和业务平台都需要完善的监控告警体系，保障稳定性。</p>
+</blockquote>
+<hr>
+<h2>五、风控层</h2>
+<h3>5.1 安全审核</h3>
+<ul>
+<li><strong>资料变更</strong>：身份证号、手机号等敏感信息变更监控</li>
+<li><strong>资金来往</strong>：交易行为风控</li>
+<li><strong>消息识别</strong>：区分 <strong>机 / 人</strong>，识别异常消息（Bot 行为）</li>
+<li>支持 <strong>人工审核</strong> 介入</li>
+</ul>
+<hr>
+<h2>六、多媒体层</h2>
+<h3>6.1 WebRTC</h3>
+<ul>
+<li><strong>语音、视频</strong> 实时通信</li>
+<li><strong>信令</strong> 服务：连接建立、状态同步</li>
+<li>属于<strong>底层</strong>能力，一般不展开细讲</li>
+</ul>
+<hr>
+<h2>七、运维与部署层（CI/CD）</h2>
+<h3>7.1 部署环境</h3>
+<table>
+<thead>
+<tr>
+<th>环境</th>
+<th>说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><strong>线下</strong></td>
+<td>开发/测试环境</td>
+</tr>
+<tr>
+<td><strong>线上</strong></td>
+<td>生产环境</td>
+</tr>
+<tr>
+<td><strong>预上线</strong></td>
+<td>灰度/Staging 环境</td>
+</tr>
+</tbody>
+</table>
+<h3>7.2 操作系统</h3>
+<ul>
+<li><strong>iOS</strong>、<strong>Windows</strong>、<strong>Linux</strong></li>
+</ul>
+<h3>7.3 基础设施</h3>
+<ul>
+<li><strong>告警 &#x26; 监控</strong>：全链路可观测性</li>
+<li><strong>ECS</strong>：云服务器</li>
+<li><strong>机房</strong>：物理服务器托管</li>
+<li><strong>K8s</strong>：容器编排，现代化部署方式</li>
+<li><strong>域名</strong>：DNS 管理</li>
+</ul>
+<h3>7.4 运维关注点</h3>
+<ul>
+<li><strong>SQL</strong>：数据库性能、慢查询优化</li>
+<li><strong>高可用</strong>：服务容灾、故障自动切换</li>
+<li><strong>内存、CPU、网络</strong>：核心资源监控</li>
+</ul>
+<hr>
+<h2>八、后端固定组件选型</h2>
+<blockquote>
+<p>这些是后端开发中<strong>相对固定</strong>的几类组件，技术选型围绕它们展开：</p>
+</blockquote>
+<h3>8.1 语言</h3>
+<ul>
+<li>选型相对<strong>灵活</strong>，根据团队技术栈和场景选择</li>
+</ul>
+<h3>8.2 网络框架</h3>
+<ul>
+<li>需完成<strong>交流</strong>（通信）</li>
+<li>明确<strong>哪一层</strong>、使用<strong>什么协议</strong></li>
+<li>区分 <strong>关系型 / 非关系型</strong> 数据库</li>
+<li>区分 <strong>分析型 / 事务型</strong> 场景</li>
+<li>关注 <strong>内存 / 外存</strong> 使用</li>
+</ul>
+<h3>8.3 数据库</h3>
+<ul>
+<li>关系型：MySQL、PostgreSQL 等</li>
+<li>非关系型：Redis、MongoDB 等</li>
+</ul>
+<h3>8.4 异步执行</h3>
+<ul>
+<li>完成<strong>异步执行</strong>任务</li>
+<li><strong>定时 / 延时</strong> 任务调度</li>
+</ul>
+<h3>8.5 消息队列</h3>
+<ul>
+<li><strong>MQ</strong>（通用消息队列）</li>
+<li><strong>Kafka</strong>：高吞吐日志/事件流处理</li>
+</ul>
+<h3>8.6 对象存储</h3>
+<ul>
+<li>静态资源、文件存储</li>
+</ul>
+<h3>8.7 支付底座</h3>
+<ul>
+<li>支付核心能力封装，供业务层调用</li>
+</ul>
+<h3>8.8 流量网关</h3>
+<ul>
+<li><strong>灰度</strong>：灰度发布，渐进式上线</li>
+<li><strong>开关</strong>：功能开关（Feature Toggle），快速回滚/启用功能</li>
+</ul>
+<hr>
+<h2>九、架构全景图</h2>
+<pre><code>┌─────────────────────────────────────────────────────────────┐
+│                      客户端入口                              │
+│       Web / iOS / Android / PC / Bot / 第三方                 │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────────────────────┐
+│                     流量平台                                  │
+│            攻击清洗 → 转发 → 网关                            │
+│         (服务治理 / 监控统计 / Cache)                         │
+└──────────────────────┬──────────────────────────────────────┘
+                       │
+┌──────────────────────▼──────────────────────────────────────┐
+│                     后端服务层                                 │
+│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │
+│  │   资金层  │  │   用户层  │  │   数据层  │  │   风控层  │      │
+│  │ 支付/道具 │  │ 营销/审核 │  │ 报表/存储 │  │ 安全审核  │      │
+│  │ 商家平台  │  │ BI展示   │  │ 安全/OSS │  │ 机/人识别 │      │
+│  └──────────┘  └──────────┘  └──────────┘  └──────────┘      │
+│  ┌──────────┐  ┌─────────────────────────────────────────┐  │
+│  │  多媒体层 │  │              运维部署层 (CI/CD)            │  │
+│  │ WebRTC   │  │  线下/线上/预上线 / ECS/K8s/监控告警      │  │
+│  └──────────┘  └─────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────┘
+</code></pre>
+<hr>
+<h2>十、核心设计要点总结</h2>
+<ol>
+<li><strong>入口统一</strong>：网关作为单一模块收口所有流量，便于治理和监控</li>
+<li><strong>风险防控</strong>：资金层重点防范洗钱、羊毛；流量层防御攻击；风控层识别机/人</li>
+<li><strong>数据驱动</strong>：BI 报表支撑业务决策，数据平台提供查询能力</li>
+<li><strong>监控全覆盖</strong>：从基础设施到业务平台，监控告警不可或缺</li>
+<li><strong>灰度与开关</strong>：流量网关支持灰度发布和功能开关，保障发布安全</li>
+<li><strong>组件选型灵活</strong>：语言、框架相对灵活，但消息队列、存储、网关等组件类型相对固定</li>
+</ol></div><nav class="mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2"><span></span><a class="group block text-right sm:justify-self-end" href="/wssf/notes/基础建设/project_design/"><span class="text-xs uppercase tracking-[0.16em] text-ink-soft">下一篇</span><p class="mt-1 font-medium text-ink group-hover:text-teal">如何一个人独自负责完整的后端项目</p></a></nav></article></div><!--$--><!--/$--></main><footer class="mt-24 border-t border-line"><div class="mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:px-8"><p>© <!-- -->2026<!-- --> <!-- -->前端小小栈</p><div class="flex gap-4"><a href="https://github.com/hezihua" target="_blank" rel="noreferrer" class="hover:text-teal">GitHub</a><a href="https://juejin.cn/user/1081575170131006" target="_blank" rel="noreferrer" class="hover:text-teal">掘金</a></div></div></footer></div><div class="nika-stage nika-stage-corner" role="presentation"><div class="nika-panel"><svg viewBox="0 0 280 280" class="nika-figure" xmlns="http://www.w3.org/2000/svg" role="img" preserveAspectRatio="xMidYMax meet"><title>一次只拉一个部位，全部一步到位</title><defs><radialGradient id="nikaBattleGlow" cx="50%" cy="78%" r="55%"><stop offset="0%" stop-color="#fff7c2" stop-opacity="0.9"></stop><stop offset="55%" stop-color="#fbbf24" stop-opacity="0.25"></stop><stop offset="100%" stop-color="#f59e0b" stop-opacity="0"></stop></radialGradient><linearGradient id="nikaBattleSkin" x1="0" y1="0" x2="0" y2="1"><stop offset="0%" stop-color="#ffe0bd"></stop><stop offset="100%" stop-color="#f0b27a"></stop></linearGradient></defs><ellipse cx="140" cy="168" rx="110" ry="120" fill="url(#nikaBattleGlow)"></ellipse><g class="nika-hit"><ellipse cx="140" cy="168" rx="38" ry="32" fill="#ef4444"></ellipse><path d="M105.8 170 c 15.200000000000001 11.2 53.199999999999996 11.2 68.4 0" stroke="#fbbf24" stroke-width="5" fill="none" stroke-linecap="round"></path></g><g class="nika-hit"><path d="M112 196 L108 232 L126 232 L122 196 Z" fill="#1d4ed8"></path><ellipse cx="117" cy="234" rx="14" ry="6" fill="#111827"></ellipse></g><g class="nika-hit"><path d="M158 196 L154 232 L172 232 L168 196 Z" fill="#1d4ed8"></path><ellipse cx="163" cy="234" rx="14" ry="6" fill="#111827"></ellipse></g><g class="nika-hit"><path d="M168 116 Q 201 115 234 118" fill="none" stroke="#f0b27a" stroke-width="16" stroke-linecap="round"></path><circle cx="234" cy="118" r="16" fill="#f0b27a" stroke="#d97706" stroke-width="1.3"></circle></g><g class="nika-hit"><path d="M112 116 Q 88 122 64 132" fill="none" stroke="#f0b27a" stroke-width="14" stroke-linecap="round"></path><circle cx="64" cy="132" r="14" fill="#f0b27a" stroke="#d97706" stroke-width="1.3"></circle></g><g class="nika-hit"><rect x="128" y="110" width="24" height="8" rx="10" fill="url(#nikaBattleSkin)"></rect></g><g class="nika-hit"><circle cx="140" cy="96" r="40" fill="url(#nikaBattleSkin)" stroke="#d97706" stroke-width="1.5"></circle><g fill="#f8fafc" stroke="#e2e8f0" stroke-width="1"><ellipse cx="102" cy="76" rx="15" ry="19" transform="rotate(-16 102 76)"></ellipse><ellipse cx="118" cy="58" rx="17" ry="20" transform="rotate(-6 118 58)"></ellipse><ellipse cx="140" cy="50" rx="21" ry="18"></ellipse><ellipse cx="162" cy="58" rx="17" ry="20" transform="rotate(8 162 58)"></ellipse><ellipse cx="178" cy="78" rx="15" ry="19" transform="rotate(18 178 78)"></ellipse><ellipse cx="96" cy="102" rx="11" ry="15" transform="rotate(-28 96 102)"></ellipse><ellipse cx="184" cy="102" rx="11" ry="15" transform="rotate(28 184 102)"></ellipse></g><path d="M118 94c4-9 14-9 18 0" fill="none" stroke="#111827" stroke-width="3.6" stroke-linecap="round"></path><path d="M144 94c4-9 14-9 18 0" fill="none" stroke="#111827" stroke-width="3.6" stroke-linecap="round"></path><path d="M150 102v13" stroke="#b45309" stroke-width="2.1" stroke-linecap="round"></path><path d="M146 106h8M146 111h8" stroke="#b45309" stroke-width="1.5" stroke-linecap="round"></path><path d="M112 114c8 18 48 18 56 0c-10 8-46 8-56 0z" fill="#111827"></path><path d="M118 116c7 10 37 10 44 0" fill="#fff"></path><circle cx="110" cy="108" r="5.5" fill="#fb7185" opacity="0.45"></circle><circle cx="170" cy="108" r="5.5" fill="#fb7185" opacity="0.45"></circle></g></svg></div></div><script src="/wssf/next/static/chunks/webpack-b7d03e4103fbbc14.js" id="_R_" async=""></script><script>(self.__next_f=self.__next_f||[]).push([0])</script><script>self.__next_f.push([1,"1:\"$Sreact.fragment\"\n2:I[7639,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"ParticleField\"]\n3:I[9726,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"568\",\"static/chunks/app/notes/page-88af5645832fc40b.js\"],\"\"]\n4:I[4622,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"ThemeToggle\"]\n5:I[1316,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"MarketStrip\"]\n6:I[3559,[],\"\"]\n7:I[4795,[],\"\"]\n8:I[8935,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"177\",\"static/chunks/app/layout-3fc013c111ef7a83.js\"],\"CornerNika\"]\na:I[9902,[],\"OutletBoundary\"]\nc:I[5347,[],\"AsyncMetadataOutlet\"]\ne:I[9902,[],\"ViewportBoundary\"]\n10:I[9902,[],\"MetadataBoundary\"]\n11:\"$Sreact.suspense\"\n13:I[8557,[],\"\"]\n:HL[\"/wssf/next/static/css/569ebd99b263297b.css\",\"style\"]\n"])</script><script>self.__next_f.push([1,"0:{\"P\":null,\"b\":\"Hh14vrHlftfZpLAKioeJ1\",\"p\":\"/wssf\",\"c\":[\"\",\"notes\",\"%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE\",\"backend\",\"\"],\"i\":false,\"f\":[[[\"\",{\"children\":[\"notes\",{\"children\":[[\"slug\",\"%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/backend\",\"c\"],{\"children\":[\"__PAGE__\",{}]}]}]},\"$undefined\",\"$undefined\",true],[\"\",[\"$\",\"$1\",\"c\",{\"children\":[[[\"$\",\"link\",\"0\",{\"rel\":\"stylesheet\",\"href\":\"/wssf/next/static/css/569ebd99b263297b.css\",\"precedence\":\"next\",\"crossOrigin\":\"$undefined\",\"nonce\":\"$undefined\"}]],[\"$\",\"html\",null,{\"lang\":\"zh-CN\",\"suppressHydrationWarning\":true,\"children\":[[\"$\",\"head\",null,{\"children\":[[\"$\",\"script\",null,{\"dangerouslySetInnerHTML\":{\"__html\":\"(function(){try{var t=localStorage.getItem('theme');var d=t==='dark'||(t!=='light'\u0026\u0026window.matchMedia('(prefers-color-scheme: dark)').matches);document.documentElement.classList.toggle('dark',d);document.documentElement.style.colorScheme=d?'dark':'light';}catch(e){}})();\"}}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.googleapis.com\"}],[\"$\",\"link\",null,{\"rel\":\"preconnect\",\"href\":\"https://fonts.gstatic.com\",\"crossOrigin\":\"\"}],[\"$\",\"link\",null,{\"href\":\"https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500\u0026family=Manrope:wght@400;500;600;700\u0026family=Syne:wght@500;600;700;800\u0026display=swap\",\"rel\":\"stylesheet\"}]]}],[\"$\",\"body\",null,{\"className\":\"relative\",\"children\":[[\"$\",\"$L2\",null,{}],[\"$\",\"div\",null,{\"className\":\"grain\",\"aria-hidden\":true}],[\"$\",\"div\",null,{\"className\":\"relative z-10\",\"children\":[[\"$\",\"header\",null,{\"className\":\"sticky top-0 z-40 border-b border-line/80 bg-paper/80 backdrop-blur-md\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex h-16 max-w-6xl items-center justify-between px-5 md:px-8\",\"children\":[[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"group flex items-baseline gap-2\",\"children\":[[\"$\",\"span\",null,{\"className\":\"font-display text-2xl tracking-tight text-ink group-hover:text-teal\",\"children\":\"前端小小栈\"}],[\"$\",\"span\",null,{\"className\":\"hidden text-xs uppercase tracking-[0.18em] text-ink-soft sm:inline\",\"children\":\"notes\"}]]}],[\"$\",\"nav\",null,{\"className\":\"flex items-center gap-5 text-sm text-ink-soft\",\"children\":[[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"hover:text-teal\",\"children\":\"首页\"}],[\"$\",\"$L3\",null,{\"href\":\"/notes/\",\"className\":\"hover:text-teal\",\"children\":\"全部笔记\"}],[\"$\",\"a\",null,{\"href\":\"https://github.com/hezihua\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"GitHub\"}],[\"$\",\"$L4\",null,{}]]}]]}]}],[\"$\",\"$L5\",null,{}],[\"$\",\"main\",null,{\"children\":[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":[[\"$\",\"div\",null,{\"className\":\"mx-auto max-w-3xl px-5 py-24 text-center md:px-8\",\"children\":[[\"$\",\"h1\",null,{\"className\":\"font-display text-5xl text-ink\",\"children\":\"404\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-ink-soft\",\"children\":\"没有找到这篇文章。\"}],[\"$\",\"$L3\",null,{\"href\":\"/\",\"className\":\"mt-8 inline-block text-teal hover:underline\",\"children\":\"返回首页\"}]]}],[]],\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]}],[\"$\",\"footer\",null,{\"className\":\"mt-24 border-t border-line\",\"children\":[\"$\",\"div\",null,{\"className\":\"mx-auto flex max-w-6xl flex-col gap-2 px-5 py-10 text-sm text-ink-soft md:flex-row md:items-center md:justify-between md:px-8\",\"children\":[[\"$\",\"p\",null,{\"children\":[\"© \",2026,\" \",\"前端小小栈\"]}],[\"$\",\"div\",null,{\"className\":\"flex gap-4\",\"children\":[[\"$\",\"a\",null,{\"href\":\"https://github.com/hezihua\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"GitHub\"}],[\"$\",\"a\",null,{\"href\":\"https://juejin.cn/user/1081575170131006\",\"target\":\"_blank\",\"rel\":\"noreferrer\",\"className\":\"hover:text-teal\",\"children\":\"掘金\"}]]}]]}]}]]}],[\"$\",\"$L8\",null,{}]]}]]}]]}],{\"children\":[\"notes\",[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[[\"slug\",\"%E5%9F%BA%E7%A1%80%E5%BB%BA%E8%AE%BE/backend\",\"c\"],[\"$\",\"$1\",\"c\",{\"children\":[null,[\"$\",\"$L6\",null,{\"parallelRouterKey\":\"children\",\"error\":\"$undefined\",\"errorStyles\":\"$undefined\",\"errorScripts\":\"$undefined\",\"template\":[\"$\",\"$L7\",null,{}],\"templateStyles\":\"$undefined\",\"templateScripts\":\"$undefined\",\"notFound\":\"$undefined\",\"forbidden\":\"$undefined\",\"unauthorized\":\"$undefined\"}]]}],{\"children\":[\"__PAGE__\",[\"$\",\"$1\",\"c\",{\"children\":[\"$L9\",null,[\"$\",\"$La\",null,{\"children\":[\"$Lb\",[\"$\",\"$Lc\",null,{\"promise\":\"$@d\"}]]}]]}],{},null,false]},null,false]},null,false]},null,false],[\"$\",\"$1\",\"h\",{\"children\":[null,[[\"$\",\"$Le\",null,{\"children\":\"$Lf\"}],null],[\"$\",\"$L10\",null,{\"children\":[\"$\",\"div\",null,{\"hidden\":true,\"children\":[\"$\",\"$11\",null,{\"fallback\":null,\"children\":\"$L12\"}]}]}]]}],false]],\"m\":\"$undefined\",\"G\":[\"$13\",[]],\"s\":false,\"S\":true}\n"])</script><script>self.__next_f.push([1,"14:I[9409,[\"726\",\"static/chunks/726-0d5fee421ca0697c.js\",\"568\",\"static/chunks/app/notes/page-88af5645832fc40b.js\"],\"Sidebar\"]\n15:T2578,"])</script><script>self.__next_f.push([1,"\u003ch2\u003e一、入口层（流量接入与治理）\u003c/h2\u003e\n\u003ch3\u003e1.1 客户端入口\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eWeb\u003c/strong\u003e、\u003cstrong\u003eiOS\u003c/strong\u003e、\u003cstrong\u003e安卓\u003c/strong\u003e、\u003cstrong\u003ePC\u003c/strong\u003e 多端接入\u003c/li\u003e\n\u003cli\u003e流量来源区分：正常用户 vs \u003cstrong\u003eBot（机器人）\u003c/strong\u003e vs \u003cstrong\u003e第三方\u003c/strong\u003e 调用\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e1.2 流量平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e攻击清洗\u003c/strong\u003e：防御 DDoS、恶意请求\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e转发\u003c/strong\u003e：流量分发到后端服务\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e1.3 网关层（Gateway）\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e服务治理\u003c/strong\u003e：统一入口管理\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e监控 \u0026#x26; 统计\u003c/strong\u003e：实时流量、性能监控\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eCache\u003c/strong\u003e：缓存加速，减轻后端压力\u003c/li\u003e\n\u003cli\u003e网关作为\u003cstrong\u003e单一模块\u003c/strong\u003e承接所有入口流量，再路由到后端服务\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e二、资金层（钱）\u003c/h2\u003e\n\u003ch3\u003e2.1 支付对账平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e处理所有资金往来、交易流水对账\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e2.2 道具/抽奖/履约\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e虚拟道具发放\u003c/li\u003e\n\u003cli\u003e抽奖活动逻辑\u003c/li\u003e\n\u003cli\u003e订单履约闭环\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e2.3 支付渠道\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e银行\u003c/strong\u003e、\u003cstrong\u003e微信支付（WX）\u003c/strong\u003e、\u003cstrong\u003e支付宝\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e对接多渠道支付，保障资金通路稳定\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e2.4 To B 商家平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e面向商家的资金管理、结算、提现等功能\u003c/li\u003e\n\u003cli\u003e需防范 \u003cstrong\u003e洗钱、羊毛党\u003c/strong\u003e 等风险\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e三、用户层\u003c/h2\u003e\n\u003ch3\u003e3.1 内部营销平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e用户增长、活动策划、营销推广\u003c/li\u003e\n\u003cli\u003e核心目标：\u003cstrong\u003e增长 / 获客\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e3.2 审核平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e内容/行为审核，保障平台合规\u003c/li\u003e\n\u003cli\u003e用户发布的内容、交易行为等都需要过审\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e3.3 用户数据报表\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eBI 展示\u003c/strong\u003e：业务数据可视化\u003c/li\u003e\n\u003cli\u003e支撑运营决策\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e四、数据层\u003c/h2\u003e\n\u003ch3\u003e4.1 数据平台\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e提交 SQL、报表需求\u003c/li\u003e\n\u003cli\u003e支撑业务数据查询与分析\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e4.2 安全\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e数据安全策略、权限管控\u003c/li\u003e\n\u003cli\u003e敏感数据加密、防泄漏\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e4.3 存储基础设施\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e组件\u003c/th\u003e\n\u003cth\u003e用途\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eOSS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e对象存储，静态资源（图片、文件等）\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eRDS\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e关系型数据库，结构化数据存储\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003eADB\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e分析型数据库，大数据计算\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003e4.4 监控要求\u003c/h3\u003e\n\u003cblockquote\u003e\n\u003cp\u003e\"这些平台都是要监控好的\" —— 所有基础设施和业务平台都需要完善的监控告警体系，保障稳定性。\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003chr\u003e\n\u003ch2\u003e五、风控层\u003c/h2\u003e\n\u003ch3\u003e5.1 安全审核\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e资料变更\u003c/strong\u003e：身份证号、手机号等敏感信息变更监控\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e资金来往\u003c/strong\u003e：交易行为风控\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e消息识别\u003c/strong\u003e：区分 \u003cstrong\u003e机 / 人\u003c/strong\u003e，识别异常消息（Bot 行为）\u003c/li\u003e\n\u003cli\u003e支持 \u003cstrong\u003e人工审核\u003c/strong\u003e 介入\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e六、多媒体层\u003c/h2\u003e\n\u003ch3\u003e6.1 WebRTC\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e语音、视频\u003c/strong\u003e 实时通信\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e信令\u003c/strong\u003e 服务：连接建立、状态同步\u003c/li\u003e\n\u003cli\u003e属于\u003cstrong\u003e底层\u003c/strong\u003e能力，一般不展开细讲\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e七、运维与部署层（CI/CD）\u003c/h2\u003e\n\u003ch3\u003e7.1 部署环境\u003c/h3\u003e\n\u003ctable\u003e\n\u003cthead\u003e\n\u003ctr\u003e\n\u003cth\u003e环境\u003c/th\u003e\n\u003cth\u003e说明\u003c/th\u003e\n\u003c/tr\u003e\n\u003c/thead\u003e\n\u003ctbody\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e线下\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e开发/测试环境\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e线上\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e生产环境\u003c/td\u003e\n\u003c/tr\u003e\n\u003ctr\u003e\n\u003ctd\u003e\u003cstrong\u003e预上线\u003c/strong\u003e\u003c/td\u003e\n\u003ctd\u003e灰度/Staging 环境\u003c/td\u003e\n\u003c/tr\u003e\n\u003c/tbody\u003e\n\u003c/table\u003e\n\u003ch3\u003e7.2 操作系统\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eiOS\u003c/strong\u003e、\u003cstrong\u003eWindows\u003c/strong\u003e、\u003cstrong\u003eLinux\u003c/strong\u003e\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e7.3 基础设施\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e告警 \u0026#x26; 监控\u003c/strong\u003e：全链路可观测性\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eECS\u003c/strong\u003e：云服务器\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e机房\u003c/strong\u003e：物理服务器托管\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eK8s\u003c/strong\u003e：容器编排，现代化部署方式\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e域名\u003c/strong\u003e：DNS 管理\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e7.4 运维关注点\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eSQL\u003c/strong\u003e：数据库性能、慢查询优化\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e高可用\u003c/strong\u003e：服务容灾、故障自动切换\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e内存、CPU、网络\u003c/strong\u003e：核心资源监控\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e八、后端固定组件选型\u003c/h2\u003e\n\u003cblockquote\u003e\n\u003cp\u003e这些是后端开发中\u003cstrong\u003e相对固定\u003c/strong\u003e的几类组件，技术选型围绕它们展开：\u003c/p\u003e\n\u003c/blockquote\u003e\n\u003ch3\u003e8.1 语言\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e选型相对\u003cstrong\u003e灵活\u003c/strong\u003e，根据团队技术栈和场景选择\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.2 网络框架\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e需完成\u003cstrong\u003e交流\u003c/strong\u003e（通信）\u003c/li\u003e\n\u003cli\u003e明确\u003cstrong\u003e哪一层\u003c/strong\u003e、使用\u003cstrong\u003e什么协议\u003c/strong\u003e\u003c/li\u003e\n\u003cli\u003e区分 \u003cstrong\u003e关系型 / 非关系型\u003c/strong\u003e 数据库\u003c/li\u003e\n\u003cli\u003e区分 \u003cstrong\u003e分析型 / 事务型\u003c/strong\u003e 场景\u003c/li\u003e\n\u003cli\u003e关注 \u003cstrong\u003e内存 / 外存\u003c/strong\u003e 使用\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.3 数据库\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e关系型：MySQL、PostgreSQL 等\u003c/li\u003e\n\u003cli\u003e非关系型：Redis、MongoDB 等\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.4 异步执行\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e完成\u003cstrong\u003e异步执行\u003c/strong\u003e任务\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e定时 / 延时\u003c/strong\u003e 任务调度\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.5 消息队列\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003eMQ\u003c/strong\u003e（通用消息队列）\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003eKafka\u003c/strong\u003e：高吞吐日志/事件流处理\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.6 对象存储\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e静态资源、文件存储\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.7 支付底座\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e支付核心能力封装，供业务层调用\u003c/li\u003e\n\u003c/ul\u003e\n\u003ch3\u003e8.8 流量网关\u003c/h3\u003e\n\u003cul\u003e\n\u003cli\u003e\u003cstrong\u003e灰度\u003c/strong\u003e：灰度发布，渐进式上线\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e开关\u003c/strong\u003e：功能开关（Feature Toggle），快速回滚/启用功能\u003c/li\u003e\n\u003c/ul\u003e\n\u003chr\u003e\n\u003ch2\u003e九、架构全景图\u003c/h2\u003e\n\u003cpre\u003e\u003ccode\u003e┌─────────────────────────────────────────────────────────────┐\n│                      客户端入口                              │\n│       Web / iOS / Android / PC / Bot / 第三方                 │\n└──────────────────────┬──────────────────────────────────────┘\n                       │\n┌──────────────────────▼──────────────────────────────────────┐\n│                     流量平台                                  │\n│            攻击清洗 → 转发 → 网关                            │\n│         (服务治理 / 监控统计 / Cache)                         │\n└──────────────────────┬──────────────────────────────────────┘\n                       │\n┌──────────────────────▼──────────────────────────────────────┐\n│                     后端服务层                                 │\n│  ┌──────────┐  ┌──────────┐  ┌──────────┐  ┌──────────┐      │\n│  │   资金层  │  │   用户层  │  │   数据层  │  │   风控层  │      │\n│  │ 支付/道具 │  │ 营销/审核 │  │ 报表/存储 │  │ 安全审核  │      │\n│  │ 商家平台  │  │ BI展示   │  │ 安全/OSS │  │ 机/人识别 │      │\n│  └──────────┘  └──────────┘  └──────────┘  └──────────┘      │\n│  ┌──────────┐  ┌─────────────────────────────────────────┐  │\n│  │  多媒体层 │  │              运维部署层 (CI/CD)            │  │\n│  │ WebRTC   │  │  线下/线上/预上线 / ECS/K8s/监控告警      │  │\n│  └──────────┘  └─────────────────────────────────────────┘  │\n└─────────────────────────────────────────────────────────────┘\n\u003c/code\u003e\u003c/pre\u003e\n\u003chr\u003e\n\u003ch2\u003e十、核心设计要点总结\u003c/h2\u003e\n\u003col\u003e\n\u003cli\u003e\u003cstrong\u003e入口统一\u003c/strong\u003e：网关作为单一模块收口所有流量，便于治理和监控\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e风险防控\u003c/strong\u003e：资金层重点防范洗钱、羊毛；流量层防御攻击；风控层识别机/人\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e数据驱动\u003c/strong\u003e：BI 报表支撑业务决策，数据平台提供查询能力\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e监控全覆盖\u003c/strong\u003e：从基础设施到业务平台，监控告警不可或缺\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e灰度与开关\u003c/strong\u003e：流量网关支持灰度发布和功能开关，保障发布安全\u003c/li\u003e\n\u003cli\u003e\u003cstrong\u003e组件选型灵活\u003c/strong\u003e：语言、框架相对灵活，但消息队列、存储、网关等组件类型相对固定\u003c/li\u003e\n\u003c/ol\u003e"])</script><script>self.__next_f.push([1,"9:[\"$\",\"div\",null,{\"className\":\"mx-auto grid max-w-6xl gap-10 px-5 py-12 md:px-8 lg:grid-cols-[240px_1fr]\",\"children\":[[\"$\",\"$L14\",null,{\"items\":[{\"slug\":\"ai\",\"title\":\"AI\",\"posts\":[{\"slug\":\"ai/本体论应用场景\",\"title\":\"本体论和本体建模：具体应用场景究竟是什么？\"},{\"slug\":\"ai/ontology-driven-agent\",\"title\":\"从人月聊IT到 Ontology-driven Agent：可落地的本体平台路线\"},{\"slug\":\"ai/piwechat\",\"title\":\"Pi 微信机器人\"},{\"slug\":\"ai/aip\",\"title\":\"Infini Ontology：AIP 闭环要点总结\"},{\"slug\":\"ai/ollama_qwen_deploy_guide\",\"title\":\"Ollama + Qwen 部署\"},{\"slug\":\"ai/编程新架构\",\"title\":\"业务与 AI 协作架构图汇总\"},{\"slug\":\"ai/taskmaster\",\"title\":\"taskmaster\"},{\"slug\":\"ai/llama-factory\",\"title\":\"llama-factory 部署\"},{\"slug\":\"ai/openclaw\",\"title\":\"openclaw 连飞书\"}]},{\"slug\":\"工程化\",\"title\":\"工程化\",\"posts\":[{\"slug\":\"基础建设/backend\",\"title\":\"后端架构全景解析\"},{\"slug\":\"基础建设/project_design\",\"title\":\"如何一个人独自负责完整的后端项目\"},{\"slug\":\"基础建设/数据库与金融数据工具\",\"title\":\"数据库与金融数据工具\"},{\"slug\":\"基础建设/passkey_complete\",\"title\":\"passkey\"},{\"slug\":\"基础建设/passkey\",\"title\":\"passkey 登录\"},{\"slug\":\"基础建设/3\",\"title\":\"gitflow\"},{\"slug\":\"代码/crypt\",\"title\":\"RSA 加密\"},{\"slug\":\"代码/signature\",\"title\":\"数字签名\"},{\"slug\":\"基础建设/1\",\"title\":\"verdaccio 私有仓库\"},{\"slug\":\"基础建设/2\",\"title\":\"vue + vscode 断点调试\"}]},{\"slug\":\"运维\",\"title\":\"运维\",\"posts\":[{\"slug\":\"linux/7\",\"title\":\"fnm 离线安装\"},{\"slug\":\"linux/6\",\"title\":\"pm2 常用命令\"},{\"slug\":\"linux/1\",\"title\":\"常用命令 1\"},{\"slug\":\"linux/2\",\"title\":\"常用命令 2\"},{\"slug\":\"docker/4\",\"title\":\"镜像源配置\"},{\"slug\":\"linux/3\",\"title\":\"常用命令 3\"},{\"slug\":\"nginx/5\",\"title\":\"自签名证书\"},{\"slug\":\"nginx/3\",\"title\":\"作用\"},{\"slug\":\"nginx/4\",\"title\":\"应用场景\"},{\"slug\":\"nginx/6\",\"title\":\"Windows 脚本\"},{\"slug\":\"linux/4\",\"title\":\"systemd\"},{\"slug\":\"linux/5\",\"title\":\"软件包管理\"},{\"slug\":\"nginx/1\",\"title\":\"一次编译\"},{\"slug\":\"nginx/2\",\"title\":\"上传文件\"},{\"slug\":\"docker/1\",\"title\":\"镜像 / 容器\"},{\"slug\":\"docker/2\",\"title\":\"数据卷 / 网络\"},{\"slug\":\"docker/3\",\"title\":\"Dockerfile\"}]},{\"slug\":\"工具与排障\",\"title\":\"工具与排障\",\"posts\":[{\"slug\":\"问题解决/v2rayN\",\"title\":\"v2rayN 指南\"},{\"slug\":\"问题解决/pr\",\"title\":\"从 Fork 向上游开 PR\"},{\"slug\":\"问题解决/go\",\"title\":\"WSL 安装 Go\"},{\"slug\":\"问题解决/1\",\"title\":\"GitHub 连接问题\"},{\"slug\":\"有用的工具/1\",\"title\":\"常用链接\"}]},{\"slug\":\"项目与副业\",\"title\":\"项目与副业\",\"posts\":[{\"slug\":\"关于副业/stripe-supabase-key\",\"title\":\"Stripe / Supabase\"},{\"slug\":\"项目总结/pkgcli\",\"title\":\"pkgcli 以及相关模板开发\"},{\"slug\":\"项目总结/request\",\"title\":\"request\"},{\"slug\":\"项目总结/ruoyi\",\"title\":\"ruoyi项目总结\"},{\"slug\":\"关于副业/工具\",\"title\":\"副业工具\"},{\"slug\":\"关于副业/技术\",\"title\":\"副业技术\"},{\"slug\":\"关于副业/idea\",\"title\":\"副业idea\"},{\"slug\":\"项目总结/nextjs\",\"title\":\"Next.js 项目\"},{\"slug\":\"项目总结/media\",\"title\":\"音视频相关功能开发\"},{\"slug\":\"项目总结/monitor\",\"title\":\"前端监控\"},{\"slug\":\"项目总结/monorepo\",\"title\":\"monorepo 总结\"},{\"slug\":\"项目总结/list\",\"title\":\"项目汇总\"},{\"slug\":\"项目总结/rtsp\",\"title\":\"rtsp项目总结\"},{\"slug\":\"项目总结/regist\",\"title\":\"Windows 自定义协议\"}]}]}],[\"$\",\"article\",null,{\"children\":[[\"$\",\"p\",null,{\"className\":\"text-xs font-semibold uppercase tracking-[0.2em] text-teal\",\"children\":\"工程化\"}],[\"$\",\"h1\",null,{\"className\":\"mt-3 font-display text-5xl tracking-tight text-ink md:text-6xl\",\"children\":\"后端架构全景解析\"}],[\"$\",\"p\",null,{\"className\":\"mt-4 text-sm text-ink-soft\",\"children\":[\"jimmy\",\" · 2026-5-21\"]}],[\"$\",\"div\",null,{\"className\":\"prose-note mt-10\",\"dangerouslySetInnerHTML\":{\"__html\":\"$15\"}}],\"$L16\"]}]]}]\n"])</script><script>self.__next_f.push([1,"16:[\"$\",\"nav\",null,{\"className\":\"mt-16 grid gap-4 border-t border-line pt-8 sm:grid-cols-2\",\"children\":[[\"$\",\"span\",null,{}],[\"$\",\"$L3\",null,{\"href\":\"/notes/基础建设/project_design/\",\"className\":\"group block text-right sm:justify-self-end\",\"children\":[[\"$\",\"span\",null,{\"className\":\"text-xs uppercase tracking-[0.16em] text-ink-soft\",\"children\":\"下一篇\"}],[\"$\",\"p\",null,{\"className\":\"mt-1 font-medium text-ink group-hover:text-teal\",\"children\":\"如何一个人独自负责完整的后端项目\"}]]}]]}]\n"])</script><script>self.__next_f.push([1,"f:[[\"$\",\"meta\",\"0\",{\"charSet\":\"utf-8\"}],[\"$\",\"meta\",\"1\",{\"name\":\"viewport\",\"content\":\"width=device-width, initial-scale=1\"}]]\nb:null\n"])</script><script>self.__next_f.push([1,"d:{\"metadata\":[[\"$\",\"title\",\"0\",{\"children\":\"后端架构全景解析 · 前端小小栈\"}],[\"$\",\"meta\",\"1\",{\"name\":\"description\",\"content\":\"Web 、 iOS 、 安卓 、 PC 多端接入 流量来源区分：正常用户 vs Bot（机器人） vs 第三方 调用 攻击清洗 ：防御 DDoS、恶意请求 转发 ：流量分发到后端服务 服务治理 ：统一入口管理 监控 \u0026 统计 ：实时流量、性\"}]],\"error\":null,\"digest\":\"$undefined\"}\n"])</script><script>self.__next_f.push([1,"12:\"$d:metadata\"\n"])</script></body></html>
