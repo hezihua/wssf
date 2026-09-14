@@ -65,7 +65,6 @@ src/styles/       全局样式与 light/dark 主题
 | 运维 | `linux`、`docker`、`nginx` |
 | 工具与排障 | `有用的工具`、`问题解决` |
 | 项目与副业 | `项目总结`、`关于副业` |
-| 面试 | `面试` |
 
 文章标题可在 `src/lib/site.ts` 的 `titleOverrides` 中覆盖。
 

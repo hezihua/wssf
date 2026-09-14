@@ -39,12 +39,6 @@ export const categories: CategoryMeta[] = [
     blurb: '项目回顾与变现实践',
     sources: ['项目总结', '关于副业'],
   },
-  {
-    slug: '面试',
-    title: '面试',
-    blurb: '面试资料与题库整理',
-    sources: ['面试'],
-  },
 ]
 
 export function resolveCategoryTitle(folder: string): string {
@@ -91,12 +85,11 @@ export const titleOverrides: Record<string, string> = {
   '代码/signature': '数字签名',
   '问题解决/1': 'GitHub 连接问题',
   '问题解决/go': 'WSL 安装 Go',
-  '问题解决/openclaw': 'openclaw 连飞书',
+  'ai/openclaw': 'openclaw 连飞书',
   '问题解决/pr': '从 Fork 向上游开 PR',
   '问题解决/v2rayN': 'v2rayN 指南',
-  '面试/1': '面试资料',
   '项目总结/list': '项目汇总',
-  '项目总结/llama-factory': 'llama-factory 部署',
+  'ai/llama-factory': 'llama-factory 部署',
   '项目总结/nextjs': 'Next.js 项目',
   '项目总结/regist': 'Windows 自定义协议',
 }
